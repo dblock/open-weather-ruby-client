@@ -3,9 +3,22 @@
 module OpenWeather
   module Endpoints
     module Weather
-      #
-      # Get current weather for a city.
-      #
+      def zip(code, country = nil)
+        weather(zip: code, country: country)
+      end
+
+      def geo(lat, lon)
+        weather(lat: lat, lon: lon)
+      end
+
+      def city(name, state = nil, country = nil)
+        weather(city: name, state: state, country: country)
+      end
+
+      def id(id)
+        weather(id: id)
+      end
+
       def weather(options = {})
         if options.key?(:zip) && options.key?(:country)
           options = options.dup

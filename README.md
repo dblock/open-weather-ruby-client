@@ -59,24 +59,28 @@ data.main.temp_min # => 281.48
 Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
 
 ```ruby
+client.city('New York', 'NY', 'US')
 client.weather(city: 'New York', state: 'NY', country: 'US')
 ```
 
 Returns weather by city ID.
 
 ```ruby
+client.id(2643743) # => weather in London
 client.weather(id: 2643743) # => weather in London
 ```
 
 Returns weather by latitude and longitude.
 
 ```ruby
+client.geo(51.51, -0.13) # => weather in London
 client.weather(lat: 51.51, lon: -0.13) # => weather in London
 ```
 
 Returns weather by zip code with an optional country code (defaults to US).
 
 ```ruby
+client.zip(10018, 'US') # => weather in New York, 10018
 client.weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
