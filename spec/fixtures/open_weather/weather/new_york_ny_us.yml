@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&q=New%20York,NY,US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 28 Apr 2020 03:53:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '465'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=new+york%2cny%2cus"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-74.01,"lat":40.71},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"base":"stations","main":{"temp":279.86,"feels_like":276.82,"temp_min":279.26,"temp_max":280.37,"pressure":1019,"humidity":75},"visibility":16093,"wind":{"speed":2.1},"clouds":{"all":90},"dt":1588045785,"sys":{"type":1,"id":4610,"country":"US","sunrise":1587981546,"sunset":1588031269},"timezone":-14400,"id":5128581,"name":"New
+        York","cod":200}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2020 03:53:14 GMT
+recorded_with: VCR 5.0.0

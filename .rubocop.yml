@@ -1,0 +1,10 @@
+Style/ModuleFunction:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+inherit_from: .rubocop_todo.yml
