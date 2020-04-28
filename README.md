@@ -42,7 +42,7 @@ client = OpenWeather::Client.new(
 
 ### Current Weather
 
-Returns the current weather.
+Returns the current weather by city.
 
 ```ruby
 data = client.weather(city: 'London') # => OpenWeather::Models::Data
@@ -56,10 +56,28 @@ data.main.temp_max # => 283.15
 data.main.temp_min # => 281.48
 ```
 
-You can retrieve data by city, state and country code.
+Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
 
 ```ruby
-client.weather(city: 'New York', state: 'NY', country: 'USA')
+client.weather(city: 'New York', state: 'NY', country: 'US')
+```
+
+Returns weather by city ID.
+
+```ruby
+client.weather(id: 2643743) # => weather in London
+```
+
+Returns weather by latitude and longitude.
+
+```ruby
+client.weather(lat: 51.51, lon: -0.13) # => weather in London
+```
+
+Returns weather by zip code with an optional country code (defaults to US).
+
+```ruby
+client.weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
 See [OpenWeather::Models::Data](lib/open_weather/models/data.rb) for all available properties.

@@ -4,11 +4,17 @@ module OpenWeather
   module Endpoints
     module Weather
       #
-      # Get current weather.
+      # Get current weather for a city.
       #
       def weather(options = {})
-        options = options.dup
-        unless options.key?(:q)
+        if options.key?(:zip) && options.key?(:country)
+          options = options.dup
+          options[:zip] = [
+            options.delete(:zip),
+            options.delete(:country)
+          ].compact.join(',')
+        elsif options.key?(:city)
+          options = options.dup
           options[:q] = [
             options.delete(:city),
             options.delete(:state),

@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&lat=51.51&lon=-0.13
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 28 Apr 2020 04:39:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '483'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=51.51&lon=-0.13"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"base":"stations","main":{"temp":282.08,"feels_like":277.37,"temp_min":280.93,"temp_max":283.71,"pressure":1005,"humidity":87},"visibility":8000,"wind":{"speed":5.7,"deg":90},"rain":{"1h":1.52},"clouds":{"all":75},"dt":1588048665,"sys":{"type":1,"id":1414,"country":"GB","sunrise":1588048633,"sunset":1588101506},"timezone":3600,"id":2643743,"name":"London","cod":200}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2020 04:39:34 GMT
+recorded_with: VCR 5.0.0

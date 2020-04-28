@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe 'OpenWeather::Client#weather' do
   include_context 'API client'
-  it 'gets current weather by city name', vcr: { cassette_name: 'weather/london_city' } do
+  it 'gets current weather by city name', vcr: { cassette_name: 'weather/city_name' } do
     data = client.weather(city: 'London')
     expect(data).to be_a OpenWeather::Models::Data
     expect(data.base).to eq 'stations'
