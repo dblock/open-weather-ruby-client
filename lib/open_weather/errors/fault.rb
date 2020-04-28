@@ -10,10 +10,6 @@ module OpenWeather
       def headers
         response[:headers]
       end
-
-      def errors
-        response[:body]['errors']
-      end
     end
   end
 end
