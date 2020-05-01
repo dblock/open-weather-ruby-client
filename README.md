@@ -98,9 +98,11 @@ client.current_zip(10018, 'US') # => weather in New York, 10018
 client.current_weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
-See [OpenWeather::Models::CityWeather](lib/open_weather/models/data.rb) for all available properties.
+See [OpenWeather::Models::CityWeather](lib/open_weather/models/city_weather.rb) for all available properties.
 
 ### Current Weather for Several Cities
+
+Collection APIs return [OpenWeather::Models::List](lib/open_weather/models/list.rb), which includes multiple instances of [OpenWeather::Models::CityWeather](lib/open_weather/models/city_weather.rb).
 
 #### Cities Within a Rectangle Zone
 
