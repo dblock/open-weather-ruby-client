@@ -9,6 +9,8 @@ module OpenWeather
       property 'feels_like'
       property 'temp_min'
       property 'temp_max'
+      property 'sea_level'
+      property 'grnd_level'
     end
   end
 end

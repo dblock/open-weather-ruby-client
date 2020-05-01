@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/find?appid=api-key&cnt=7&lat=55.5&lon=37.5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 01 May 2020 03:23:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2665'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/find?cnt=7&lat=55.5&lon=37.5"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"message":"accurate","cod":"200","count":7,"list":[{"id":495260,"name":"Shcherbinka","coord":{"lat":55.5,"lon":37.56},"main":{"temp":276.86,"feels_like":273.02,"temp_min":276.15,"temp_max":277.15,"pressure":1014,"humidity":86},"dt":1588302549,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":47},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},{"id":564517,"name":"Dubrovitsy","coord":{"lat":55.44,"lon":37.49},"main":{"temp":276.85,"feels_like":273.01,"temp_min":276.15,"temp_max":277.15,"pressure":1014,"humidity":86},"dt":1588302321,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":56},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}]},{"id":570578,"name":"Butovo","coord":{"lat":55.55,"lon":37.58},"main":{"temp":277.4,"feels_like":273.65,"temp_min":277.04,"temp_max":278.15,"pressure":1014,"humidity":86},"dt":1588302321,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":43},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},{"id":545782,"name":"Kommunarka","coord":{"lat":55.57,"lon":37.49},"main":{"temp":277.11,"feels_like":273.31,"temp_min":276.15,"temp_max":278.15,"pressure":1014,"humidity":86},"dt":1588302320,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":37},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},{"id":6417490,"name":"Lesparkkhoz","coord":{"lat":55.54,"lon":37.6},"main":{"temp":277.41,"feels_like":273.66,"temp_min":277.04,"temp_max":278.15,"pressure":1014,"humidity":86},"dt":1588303012,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":45},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},{"id":526736,"name":"Sed’moy Mikrorayon","coord":{"lat":55.56,"lon":37.58},"main":{"temp":277.41,"feels_like":273.66,"temp_min":277.04,"temp_max":278.15,"pressure":1014,"humidity":86},"dt":1588302313,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":42},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},{"id":473051,"name":"Vlas’yevo","coord":{"lat":55.46,"lon":37.38},"main":{"temp":276.82,"feels_like":272.97,"temp_min":276.15,"temp_max":277.15,"pressure":1014,"humidity":86},"dt":1588302317,"wind":{"speed":3,"deg":80},"sys":{"country":"RU"},"rain":null,"snow":null,"clouds":{"all":52},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}]}]}'
+    http_version:
+  recorded_at: Fri, 01 May 2020 03:23:35 GMT
+recorded_with: VCR 5.0.0

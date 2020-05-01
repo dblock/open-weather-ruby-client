@@ -5,6 +5,7 @@ module OpenWeather
     include Connection
     include Request
     include Endpoints::Weather
+    include Endpoints::Box
 
     attr_accessor(*Config::ATTRIBUTES)
 

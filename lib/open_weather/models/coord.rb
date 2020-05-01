@@ -3,8 +3,8 @@
 module OpenWeather
   module Models
     class Coord < Model
-      property 'lon'
-      property 'lat'
+      property 'lon', from: 'Lon'
+      property 'lat', from: 'Lat'
     end
   end
 end

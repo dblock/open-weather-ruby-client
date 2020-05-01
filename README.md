@@ -13,9 +13,12 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
 - [Installation](#installation)
 - [Usage](#usage)
   - [Current Weather](#current-weather)
+  - [Current Weather for Several Cities](#current-weather-for-several-cities)
+    - [Cities Within a Rectangle Zone](#cities-within-a-rectangle-zone)
+    - [Cities Within a Circle](#cities-within-a-circle)
 - [Configuration](#configuration)
+  - [Language](#language)
 - [Errors](#errors)
-- [Users](#users)
 - [Resources](#resources)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
@@ -85,6 +88,44 @@ client.weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
 See [OpenWeather::Models::Data](lib/open_weather/models/data.rb) for all available properties.
+
+### Current Weather for Several Cities
+
+#### Cities Within a Rectangle Zone
+
+```ruby
+data = client.cities_box(12, 32, 15, 37, 10) # => OpenWeather::Models::List
+
+data.first.name # 'Birkirkara'
+data.main.temp # => 16.23
+```
+
+You can optionally name parameters.
+
+```ruby
+client.cities_box(lon_left: 12, lat_bottom: 32, lon_right: 15, lat_top: 37, zoom: 10) # => OpenWeather::Models::List
+```
+
+You can use server clustering of points with `cluster: true`.
+
+```ruby
+client.cities_box(12, 32, 15, 37, 10, cluster: true) # => OpenWeather::Models::List
+```
+
+#### Cities Within a Circle
+
+```ruby
+data = client.cities_circle(55.5, 37.5, 10) # => OpenWeather::Models::List
+
+data.first.name # 'Shcherbinka'
+data.main.temp # => 276.86
+```
+
+You can optionally name parameters.
+
+```ruby
+client.cities_circle(lat: 55.5, lon: 37.5, cnt: 7) # => OpenWeather::Models::List
+```
 
 ## Configuration
 

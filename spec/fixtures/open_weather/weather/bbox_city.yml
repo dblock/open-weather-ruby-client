@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/box/city?appid=api-key&bbox=12,32,15,37,10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 01 May 2020 02:48:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5583'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/box/city?bbox=12%2C32%2C15%2C37%2C10"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":200,"calctime":0.004875085,"cnt":15,"list":[{"id":2563191,"dt":1588298967,"name":"Birkirkara","coord":{"Lon":14.46,"Lat":35.9},"main":{"temp":16.23,"feels_like":12.87,"temp_min":16,"temp_max":16.67,"pressure":1017,"humidity":82},"visibility":10000,"wind":{"speed":6.2,"deg":280},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2210247,"dt":1588298965,"name":"Tripoli","coord":{"Lon":13.19,"Lat":32.88},"main":{"temp":18.44,"feels_like":17.63,"temp_min":18.44,"temp_max":18.44,"pressure":1019,"sea_level":1019,"grnd_level":1017,"humidity":57},"wind":{"speed":1.13,"deg":180},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2216885,"dt":1588298965,"name":"Zawiya","coord":{"Lon":12.73,"Lat":32.75},"main":{"temp":19.09,"feels_like":17.31,"temp_min":19.09,"temp_max":19.09,"pressure":1019,"sea_level":1019,"grnd_level":1016,"humidity":48},"wind":{"speed":1.82,"deg":130},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2212771,"dt":1588298965,"name":"Sabratah","coord":{"Lon":12.49,"Lat":32.79},"main":{"temp":18.87,"feels_like":16.74,"temp_min":18.87,"temp_max":18.87,"pressure":1019,"sea_level":1019,"grnd_level":1016,"humidity":46},"wind":{"speed":2.04,"deg":132},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2215163,"dt":1588298965,"name":"Masallatah","coord":{"Lon":14,"Lat":32.62},"main":{"temp":16.21,"feels_like":13.76,"temp_min":16.21,"temp_max":16.21,"pressure":1019,"sea_level":1019,"grnd_level":989,"humidity":49},"wind":{"speed":2.03,"deg":265},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2219905,"dt":1588298965,"name":"Al Khums","coord":{"Lon":14.26,"Lat":32.65},"main":{"temp":17.94,"feels_like":15.79,"temp_min":17.94,"temp_max":17.94,"pressure":1019,"sea_level":1019,"grnd_level":1016,"humidity":58},"wind":{"speed":2.97,"deg":277},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2208425,"dt":1588298965,"name":"Zuwarah","coord":{"Lon":12.08,"Lat":32.93},"main":{"temp":19.01,"feels_like":16.85,"temp_min":19.01,"temp_max":19.01,"pressure":1018,"sea_level":1018,"grnd_level":1018,"humidity":52},"wind":{"speed":2.75,"deg":151},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2210221,"dt":1588298965,"name":"Tarhuna","coord":{"Lon":13.63,"Lat":32.44},"main":{"temp":14.73,"feels_like":12.89,"temp_min":14.73,"temp_max":14.73,"pressure":1019,"sea_level":1019,"grnd_level":974,"humidity":42},"wind":{"speed":0.22,"deg":285},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2208485,"dt":1588298965,"name":"Zlitan","coord":{"Lon":14.57,"Lat":32.47},"main":{"temp":17.62,"feels_like":15.53,"temp_min":17.62,"temp_max":17.62,"pressure":1019,"sea_level":1019,"grnd_level":1018,"humidity":61},"wind":{"speed":3.05,"deg":292},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2217362,"dt":1588298965,"name":"Gharyan","coord":{"Lon":13.02,"Lat":32.17},"main":{"temp":14.56,"feels_like":11.64,"temp_min":14.56,"temp_max":14.56,"pressure":1019,"sea_level":1019,"grnd_level":939,"humidity":38},"wind":{"speed":1.42,"deg":170},"rain":null,"snow":null,"clouds":{"today":21},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}]},{"id":2523693,"dt":1588298917,"name":"Pozzallo","coord":{"Lon":14.85,"Lat":36.73},"main":{"temp":12.08,"feels_like":11.7,"temp_min":10,"temp_max":13.89,"pressure":1016,"humidity":93},"visibility":9000,"wind":{"speed":1,"deg":80},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2524119,"dt":1588298917,"name":"Modica","coord":{"Lon":14.77,"Lat":36.85},"main":{"temp":12.84,"feels_like":12.68,"temp_min":10,"temp_max":14.44,"pressure":1016,"humidity":93},"visibility":9000,"wind":{"speed":1,"deg":80},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2208791,"dt":1588298965,"name":"Yafran","coord":{"Lon":12.53,"Lat":32.06},"main":{"temp":15.47,"feels_like":11.69,"temp_min":15.47,"temp_max":15.47,"pressure":1019,"sea_level":1019,"grnd_level":941,"humidity":39},"wind":{"speed":2.91,"deg":177},"rain":null,"snow":null,"clouds":{"today":43},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}]},{"id":2523581,"dt":1588298917,"name":"Rosolini","coord":{"Lon":14.95,"Lat":36.82},"main":{"temp":12.2,"feels_like":11.85,"temp_min":10,"temp_max":13.89,"pressure":1016,"humidity":93},"visibility":9000,"wind":{"speed":1,"deg":80},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},{"id":2523650,"dt":1588298918,"name":"Ragusa","coord":{"Lon":14.72,"Lat":36.93},"main":{"temp":12.69,"feels_like":12.49,"temp_min":10,"temp_max":14.44,"pressure":1016,"humidity":93},"visibility":9000,"wind":{"speed":1,"deg":80},"rain":null,"snow":null,"clouds":{"today":0},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]}]}'
+    http_version: 
+  recorded_at: Fri, 01 May 2020 02:48:41 GMT
+recorded_with: VCR 5.0.0
