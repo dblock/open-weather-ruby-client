@@ -22,8 +22,9 @@ module OpenWeather
 
     def request(method, path, options)
       options = options.dup
-      options.merge!(appid: api_key) if api_key.present?
-      options.merge!(lang: lang) if lang.present?
+      options[:appid] ||= api_key if api_key.present?
+      options[:lang] ||= lang if lang.present?
+      options[:units] ||= units if units.present?
       root = options.delete(:endpoint) || endpoint
       path = [root, path].join('/')
       response = connection.send(method) do |request|

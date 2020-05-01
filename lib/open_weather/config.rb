@@ -15,6 +15,7 @@ module OpenWeather
       timeout
       open_timeout
       lang
+      units
     ].freeze
 
     attr_accessor(*Config::ATTRIBUTES)
@@ -30,6 +31,7 @@ module OpenWeather
       self.timeout = nil
       self.open_timeout = nil
       self.lang = nil
+      self.units = nil
     end
   end
 

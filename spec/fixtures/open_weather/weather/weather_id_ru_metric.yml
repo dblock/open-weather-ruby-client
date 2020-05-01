@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&id=524901&lang=ru&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 01 May 2020 13:16:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '450'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?id=524901&lang=ru&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":37.62,"lat":55.75},"weather":[{"id":800,"main":"Clear","description":"ясно","icon":"01d"}],"base":"stations","main":{"temp":12,"feels_like":7.15,"temp_min":12,"temp_max":12,"pressure":1014,"humidity":27},"visibility":10000,"wind":{"speed":3,"deg":90},"clouds":{"all":0},"dt":1588338706,"sys":{"type":1,"id":9027,"country":"RU","sunrise":1588297549,"sunset":1588352831},"timezone":10800,"id":524901,"name":"Москва","cod":200}'
+    http_version:
+  recorded_at: Fri, 01 May 2020 13:16:32 GMT
+recorded_with: VCR 5.0.0

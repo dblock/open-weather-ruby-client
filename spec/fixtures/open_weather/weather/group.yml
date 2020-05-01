@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/group?appid=api-key&id=524901,703448,2643743
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 01 May 2020 13:01:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1262'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/group?id=524901%2C703448%2C2643743"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cnt":3,"list":[{"coord":{"lon":37.62,"lat":55.75},"sys":{"country":"RU","timezone":10800,"sunrise":1588297549,"sunset":1588352831},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"main":{"temp":285.15,"feels_like":280.44,"temp_min":285.15,"temp_max":285.15,"pressure":1014,"humidity":30},"visibility":10000,"wind":{"speed":3,"deg":110},"clouds":{"all":51},"dt":1588334824,"id":524901,"name":"Moscow"},{"coord":{"lon":30.52,"lat":50.43},"sys":{"country":"UA","timezone":10800,"sunrise":1588300345,"sunset":1588353442},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"main":{"temp":289.78,"feels_like":289.57,"temp_min":289.15,"temp_max":290.37,"pressure":1009,"humidity":72},"visibility":10000,"wind":{"speed":1},"clouds":{"all":75},"dt":1588334954,"id":703448,"name":"Kiev"},{"coord":{"lon":-0.13,"lat":51.51},"sys":{"country":"GB","timezone":3600,"sunrise":1588307493,"sunset":1588361005},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"main":{"temp":286.56,"feels_like":280.81,"temp_min":284.26,"temp_max":288.71,"pressure":998,"humidity":58},"visibility":10000,"wind":{"speed":6.7,"deg":280},"clouds":{"all":30},"dt":1588334968,"id":2643743,"name":"London"}]}'
+    http_version: 
+  recorded_at: Fri, 01 May 2020 13:01:24 GMT
+recorded_with: VCR 5.0.0

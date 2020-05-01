@@ -16,7 +16,9 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
   - [Current Weather for Several Cities](#current-weather-for-several-cities)
     - [Cities Within a Rectangle Zone](#cities-within-a-rectangle-zone)
     - [Cities Within a Circle](#cities-within-a-circle)
+    - [Multiple Cities by Id](#multiple-cities-by-id)
 - [Configuration](#configuration)
+  - [Units](#units)
   - [Language](#language)
 - [Errors](#errors)
 - [Resources](#resources)
@@ -45,10 +47,10 @@ client = OpenWeather::Client.new(
 
 ### Current Weather
 
-Returns the current weather by city.
+Returns the current weather.
 
 ```ruby
-data = client.weather(city: 'London') # => OpenWeather::Models::Data
+data = client.current_weather(city: 'London') # => OpenWeather::Models::Data
 
 data.name # => 'London'
 data.main.feels_like # => 277.73
@@ -59,32 +61,41 @@ data.main.temp_max # => 283.15
 data.main.temp_min # => 281.48
 ```
 
+Returns the current weather in metric units and Russian metadata.
+
+```ruby
+data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => OpenWeather::Models::Data
+
+data.name # => 'Москва'
+data.main.temp # => 12
+```
+
 Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
 
 ```ruby
-client.city('New York', 'NY', 'US')
-client.weather(city: 'New York', state: 'NY', country: 'US')
+client.current_city('New York', 'NY', 'US')
+client.current_weather(city: 'New York', state: 'NY', country: 'US')
 ```
 
 Returns weather by city ID.
 
 ```ruby
-client.id(2643743) # => weather in London
-client.weather(id: 2643743) # => weather in London
+client.current_city_id(2643743) # => weather in London
+client.current_weather(id: 2643743) # => weather in London
 ```
 
 Returns weather by latitude and longitude.
 
 ```ruby
-client.geo(51.51, -0.13) # => weather in London
-client.weather(lat: 51.51, lon: -0.13) # => weather in London
+client.current_geo(51.51, -0.13) # => weather in London
+client.current_weather(lat: 51.51, lon: -0.13) # => weather in London
 ```
 
 Returns weather by zip code with an optional country code (defaults to US).
 
 ```ruby
-client.zip(10018, 'US') # => weather in New York, 10018
-client.weather(zip: 10018, country: 'US') # => weather in New York, 10018
+client.current_zip(10018, 'US') # => weather in New York, 10018
+client.current_weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
 See [OpenWeather::Models::Data](lib/open_weather/models/data.rb) for all available properties.
@@ -94,7 +105,7 @@ See [OpenWeather::Models::Data](lib/open_weather/models/data.rb) for all availab
 #### Cities Within a Rectangle Zone
 
 ```ruby
-data = client.cities_box(12, 32, 15, 37, 10) # => OpenWeather::Models::List
+data = client.current_cities_geo_box(12, 32, 15, 37, 10) # => OpenWeather::Models::List
 
 data.first.name # 'Birkirkara'
 data.main.temp # => 16.23
@@ -103,19 +114,19 @@ data.main.temp # => 16.23
 You can optionally name parameters.
 
 ```ruby
-client.cities_box(lon_left: 12, lat_bottom: 32, lon_right: 15, lat_top: 37, zoom: 10) # => OpenWeather::Models::List
+client.current_cities_geo_box(lon_left: 12, lat_bottom: 32, lon_right: 15, lat_top: 37, zoom: 10) # => OpenWeather::Models::List
 ```
 
 You can use server clustering of points with `cluster: true`.
 
 ```ruby
-client.cities_box(12, 32, 15, 37, 10, cluster: true) # => OpenWeather::Models::List
+client.current_cities_geo_box(12, 32, 15, 37, 10, cluster: true) # => OpenWeather::Models::List
 ```
 
 #### Cities Within a Circle
 
 ```ruby
-data = client.cities_circle(55.5, 37.5, 10) # => OpenWeather::Models::List
+data = client.current_cities_geo_circle(55.5, 37.5, 10) # => OpenWeather::Models::List
 
 data.first.name # 'Shcherbinka'
 data.main.temp # => 276.86
@@ -124,7 +135,16 @@ data.main.temp # => 276.86
 You can optionally name parameters.
 
 ```ruby
-client.cities_circle(lat: 55.5, lon: 37.5, cnt: 7) # => OpenWeather::Models::List
+client.current_cities_geo_circle(lat: 55.5, lon: 37.5, cnt: 7) # => OpenWeather::Models::List
+```
+
+#### Multiple Cities by Id
+
+```ruby
+data = client.current_cities_id(524901, 703448, 2643743) # => OpenWeather::Models::List
+
+data.first.name # 'Moscow'
+data.main.temp # => 285.15
 ```
 
 ## Configuration
@@ -143,7 +163,8 @@ The following settings are supported.
 setting             | description
 --------------------|------------
 api_key             | Required API key.
-lang                | Language in API responses.
+lang                | Default language in API responses.
+units               | Default units in API responses.
 endpoint            | Defaults to `https://api.openweathermap.org/data/2.5/`.
 user_agent          | User-agent, defaults to _OpenWeather Ruby Client/version_.
 proxy               | Optional HTTP proxy.
@@ -152,6 +173,26 @@ ca_file             | Optional SSL certificates file.
 logger              | Optional `Logger` instance that logs HTTP requests.
 timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
+
+### Units
+
+The OpenWeather API returns responses in `standard`, `metric`, and `imperial` units. You can pass `units` into API requests or configure the desired units globally.
+
+```ruby
+data = client.weather(id: 2643743, units: 'metric')
+data.name # => 'London'
+data.main.temp # => 12 (degrees Celsius)
+```
+
+```ruby
+OpenWeather.configure do |config|
+  config.units = 'metric'
+end
+
+data = client.weather(id: 2643743)
+data.name # => 'London'
+data.main.temp # => 12 (degrees Celsius)
+```
 
 ### Language
 
