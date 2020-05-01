@@ -3,10 +3,10 @@
 module OpenWeather
   module Models
     class Weather < Model
-      property 'id'
-      property 'main'
-      property 'description'
-      property 'icon'
+      property 'id' # weather condition id
+      property 'main' # group of weather parameters (Rain, Snow, Extreme, etc.)
+      property 'description' # weather condition within the group, in your language
+      property 'icon' # weather icon id
     end
   end
 end

@@ -38,7 +38,7 @@ module OpenWeather
             options.delete(:country)
           ].compact.join(',')
         end
-        OpenWeather::Models::Data.new(get('weather', options))
+        OpenWeather::Models::CityWeather.new(get('weather', options))
       end
 
       def current_cities_geo_box(*args)

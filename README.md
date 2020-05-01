@@ -4,7 +4,7 @@ OpenWeather Ruby Client
 [![Gem Version](https://badge.fury.io/rb/open-weather-ruby-client.svg)](https://badge.fury.io/rb/open-weather-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/open-weather-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/open-weather-ruby-client)
 
-A complete Ruby client for the [OpenWeather API v3](https://openweathermap.org/api).
+A Ruby client for the [OpenWeather API v3](https://openweathermap.org/api).
 
 Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_open_weather_map), provides a rich first class interface to OpenWeather models, implements more consistent error handling, and is built with thorough test coverage using actual OpenWeather data.
 
@@ -47,10 +47,10 @@ client = OpenWeather::Client.new(
 
 ### Current Weather
 
-Returns the current weather.
+Returns [current weather](https://openweathermap.org/current).
 
 ```ruby
-data = client.current_weather(city: 'London') # => OpenWeather::Models::Data
+data = client.current_weather(city: 'London') # => OpenWeather::Models::CityWeather
 
 data.name # => 'London'
 data.main.feels_like # => 277.73
@@ -64,7 +64,7 @@ data.main.temp_min # => 281.48
 Returns the current weather in metric units and Russian metadata.
 
 ```ruby
-data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => OpenWeather::Models::Data
+data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => OpenWeather::Models::CityWeather
 
 data.name # => 'Москва'
 data.main.temp # => 12
@@ -98,7 +98,7 @@ client.current_zip(10018, 'US') # => weather in New York, 10018
 client.current_weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
-See [OpenWeather::Models::Data](lib/open_weather/models/data.rb) for all available properties.
+See [OpenWeather::Models::CityWeather](lib/open_weather/models/data.rb) for all available properties.
 
 ### Current Weather for Several Cities
 

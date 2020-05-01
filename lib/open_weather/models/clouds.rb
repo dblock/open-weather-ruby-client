@@ -3,8 +3,8 @@
 module OpenWeather
   module Models
     class Clouds < Model
-      property 'all'
-      property 'today'
+      property 'all' # cloudiness, %
+      property 'today' # cloudiness today, %
     end
   end
 end

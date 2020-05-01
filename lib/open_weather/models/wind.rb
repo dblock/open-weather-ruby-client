@@ -3,8 +3,8 @@
 module OpenWeather
   module Models
     class Wind < Model
-      property 'speed'
-      property 'deg'
+      property 'speed' # wind speed in meter/sec or miles/hour
+      property 'deg' # wind direction in degrees (meteorological)
     end
   end
 end

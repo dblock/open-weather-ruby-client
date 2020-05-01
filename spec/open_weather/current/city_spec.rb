@@ -7,7 +7,7 @@ RSpec.describe 'current_city_name', vcr: { cassette_name: 'weather/weather_name'
 
   it 'returns current weather in a city by name' do
     data = client.current_city('London')
-    expect(data).to be_a OpenWeather::Models::Data
+    expect(data).to be_a OpenWeather::Models::CityWeather
     expect(data.name).to eq 'London'
     expect(data.base).to eq 'stations'
     expect(data.clouds.all).to eq 100

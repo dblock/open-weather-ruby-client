@@ -8,7 +8,7 @@ module OpenWeather
       property 'cod'
       property 'calctime'
       property 'cnt', from: 'count'
-      property 'list', transform_with: ->(v) { v.map { |i| OpenWeather::Models::Data.new(i) } }
+      property 'list', transform_with: ->(v) { v.map { |i| OpenWeather::Models::CityWeather.new(i) } }
       property 'message'
 
       def each(&block)

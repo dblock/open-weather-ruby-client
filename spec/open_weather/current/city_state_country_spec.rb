@@ -7,7 +7,7 @@ RSpec.describe 'current_city', vcr: { cassette_name: 'weather/weather_name_state
 
   it 'returns data in a city by name, state and country' do
     data = client.current_city('New York', 'NY', 'US')
-    expect(data).to be_a OpenWeather::Models::Data
+    expect(data).to be_a OpenWeather::Models::CityWeather
     expect(data.name).to eq 'New York'
     expect(data.base).to eq 'stations'
     expect(data.clouds.all).to eq 90
