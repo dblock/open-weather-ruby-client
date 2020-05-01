@@ -102,6 +102,7 @@ The following settings are supported.
 setting             | description
 --------------------|------------
 api_key             | Required API key.
+lang                | Language in API responses.
 endpoint            | Defaults to `https://api.openweathermap.org/data/2.5/`.
 user_agent          | User-agent, defaults to _OpenWeather Ruby Client/version_.
 proxy               | Optional HTTP proxy.
@@ -110,6 +111,24 @@ ca_file             | Optional SSL certificates file.
 logger              | Optional `Logger` instance that logs HTTP requests.
 timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
+
+### Language
+
+The OpenWeather API returns responses in English and supports many other languages. You can pass `lang` into API requests or configure the desired language globally.
+
+```ruby
+data = client.weather(id: 2643743, lang: 'ru')
+data.name # => 'Лондон'
+```
+
+```ruby
+OpenWeather.configure do |config|
+  config.lang = 'ru'
+end
+
+data = client.weather(id: 2643743)
+data.name # => 'Лондон'
+```
 
 ## Errors
 

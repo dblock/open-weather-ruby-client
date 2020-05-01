@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&id=2643743&lang=ru
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 01 May 2020 02:16:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '505'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?id=2643743&lang=ru"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":500,"main":"Rain","description":"небольшой
+        дождь","icon":"10n"}],"base":"stations","main":{"temp":281.2,"feels_like":277.55,"temp_min":280.37,"temp_max":282.15,"pressure":996,"humidity":81},"visibility":10000,"wind":{"speed":3.6,"deg":230},"rain":{"1h":0.25},"clouds":{"all":84},"dt":1588299211,"sys":{"type":1,"id":1414,"country":"GB","sunrise":1588307493,"sunset":1588361005},"timezone":3600,"id":2643743,"name":"Лондон","cod":200}'
+    http_version: 
+  recorded_at: Fri, 01 May 2020 02:16:34 GMT
+recorded_with: VCR 5.0.0
