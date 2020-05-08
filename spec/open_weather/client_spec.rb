@@ -19,6 +19,11 @@ RSpec.describe OpenWeather::Client do
         expect(client.user_agent).to eq OpenWeather::Config.user_agent
         expect(client.user_agent).to include OpenWeather::VERSION
       end
+      it 'caches the Faraday connection to allow persistent adapters' do
+        first = client.send(:connection)
+        second = client.send(:connection)
+        expect(first).to equal second
+      end
       (OpenWeather::Config::ATTRIBUTES - [:logger]).each do |key|
         it "sets #{key}" do
           expect(client.send(key)).to eq OpenWeather::Config.send(key)
