@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&q=London
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 28 Apr 2020 04:10:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?api_key=invalid&q=london"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 28 Apr 2020 04:10:31 GMT
+recorded_with: VCR 5.0.0
