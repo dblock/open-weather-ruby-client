@@ -7,7 +7,7 @@ RSpec.describe 'config.lang' do
 
   it 'retrieves city names in Russian', vcr: { cassette_name: 'weather/weather_id_ru' } do
     data = client.current_weather(id: 2643743, lang: 'ru')
-    expect(data).to be_a OpenWeather::Models::CityWeather
+    expect(data).to be_a OpenWeather::Models::City::Weather
     expect(data.id).to eq 2643743
     expect(data.name).to eq 'Лондон'
   end
@@ -19,13 +19,13 @@ RSpec.describe 'config.lang' do
     end
     it 'retrieves city names in Russian', vcr: { cassette_name: 'weather/weather_id_ru' } do
       data = client.current_weather(id: 2643743)
-      expect(data).to be_a OpenWeather::Models::CityWeather
+      expect(data).to be_a OpenWeather::Models::City::Weather
       expect(data.id).to eq 2643743
       expect(data.name).to eq 'Лондон'
     end
     it 'can be overridden', vcr: { cassette_name: 'weather/weather_id_en' } do
       data = client.current_weather(id: 2643743, lang: 'en')
-      expect(data).to be_a OpenWeather::Models::CityWeather
+      expect(data).to be_a OpenWeather::Models::City::Weather
       expect(data.id).to eq 2643743
       expect(data.name).to eq 'London'
     end

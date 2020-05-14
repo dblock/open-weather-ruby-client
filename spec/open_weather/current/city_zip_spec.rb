@@ -7,7 +7,7 @@ RSpec.describe 'current_zip', vcr: { cassette_name: 'weather/weather_zip' } do
 
   it 'returns current weather in zip' do
     data = client.current_zip(10018, 'US')
-    expect(data).to be_a OpenWeather::Models::CityWeather
+    expect(data).to be_a OpenWeather::Models::City::Weather
     expect(data.name).to eq 'New York'
   end
 end

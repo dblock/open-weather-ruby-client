@@ -53,7 +53,7 @@ client = OpenWeather::Client.new(
 Returns [current weather](https://openweathermap.org/current).
 
 ```ruby
-data = client.current_weather(city: 'London') # => OpenWeather::Models::CityWeather
+data = client.current_weather(city: 'London') # => OpenWeather::Models::City::Weather
 
 data.name # => 'London'
 data.main.feels_like # => 277.73
@@ -67,7 +67,7 @@ data.main.temp_min # => 281.48
 Returns the current weather in metric units and Russian metadata.
 
 ```ruby
-data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => OpenWeather::Models::CityWeather
+data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => OpenWeather::Models::City::Weather
 
 data.name # => 'Москва'
 data.main.temp # => 12
@@ -101,11 +101,11 @@ client.current_zip(10018, 'US') # => weather in New York, 10018
 client.current_weather(zip: 10018, country: 'US') # => weather in New York, 10018
 ```
 
-See [OpenWeather::Models::CityWeather](lib/open_weather/models/city_weather.rb) for all available properties.
+See [OpenWeather::Models::City::Weather](lib/open_weather/models/city/weather.rb) and related [OpenWeather::Models](lib/open_weather/models) for all available properties.
 
 ### Current Weather for Several Cities
 
-Collection APIs return [OpenWeather::Models::List](lib/open_weather/models/list.rb), which includes multiple instances of [OpenWeather::Models::CityWeather](lib/open_weather/models/city_weather.rb).
+Collection APIs return [OpenWeather::Models::List](lib/open_weather/models/list.rb), which includes multiple instances of [OpenWeather::Models::City::Weather](lib/open_weather/models/city/weather.rb).
 
 #### Cities Within a Rectangle Zone
 
@@ -155,6 +155,8 @@ data.main.temp # => 285.15
 ### One Call
 
 [One Call API](https://openweathermap.org/api/one-call-api) provides current weather, minute forecast for 1 hour, hourly forecast for 48 hours, daily forecast for 7 days, and historical weather data for 5 previous days for any geographical coordinate.
+
+See [OpenWeather::Models::OneCall](lib/open_weather/models/one_call) for all available models and properties.
 
 #### Current and Forecast Weather
 
