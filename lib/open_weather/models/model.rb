@@ -3,7 +3,7 @@
 module OpenWeather
   module Models
     class Model < Hashie::Trash
-      include Hashie::Extensions::IgnoreUndeclared
+      # include Hashie::Extensions::IgnoreUndeclared
     end
   end
 end

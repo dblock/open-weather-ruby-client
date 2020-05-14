@@ -3,6 +3,7 @@
 module OpenWeather
   module Models
     class Sys < Model
+      property 'timezone' # shift in seconds from UTC
       property 'type' # internal parameter
       property 'id' # internal parameter
       property 'message' # internal parameter

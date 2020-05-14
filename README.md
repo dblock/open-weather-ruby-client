@@ -17,6 +17,9 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Cities Within a Rectangle Zone](#cities-within-a-rectangle-zone)
     - [Cities Within a Circle](#cities-within-a-circle)
     - [Multiple Cities by Id](#multiple-cities-by-id)
+  - [One Call](#one-call)
+    - [Current and Forecast Weather](#current-and-forecast-weather)
+    - [Historical Weather](#historical-weather)
 - [Configuration](#configuration)
   - [Units](#units)
   - [Language](#language)
@@ -147,6 +150,40 @@ data = client.current_cities_id(524901, 703448, 2643743) # => OpenWeather::Model
 
 data.first.name # 'Moscow'
 data.main.temp # => 285.15
+```
+
+### One Call
+
+[One Call API](https://openweathermap.org/api/one-call-api) provides current weather, minute forecast for 1 hour, hourly forecast for 48 hours, daily forecast for 7 days, and historical weather data for 5 previous days for any geographical coordinate.
+
+#### Current and Forecast Weather
+
+```ruby
+data = client.one_call(lat: 33.441792, lon: -94.037689) # => OpenWeather::Models::OneCall::Weather
+data.lat # => 33.44
+data.lon # => -94.04
+data.timezone # => 'America/Chicago'
+data.current # => OpenWeather::Models::OneCall::CurrentWeather
+data.minutely # => Array[OpenWeather::Models::OneCall::MinutelyWeather]
+data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
+data.daily # => Array[OpenWeather::Models::OneCall::DailyWeather]
+```
+
+Exclude minutely and hourly data.
+
+```ruby
+client.one_call(lat: 33.441792, lon: -94.037689, exclude: ['minutely', 'hourly'])
+```
+
+#### Historical Weather
+
+```ruby
+data = client.one_call(lat: 33.441792, lon: -94.037689, dt: Time.now - 24 * 60 * 60) # => OpenWeather::Models::OneCall::Weather
+data.lat # => 33.44
+data.lon # => -94.04
+data.timezone # => 'America/Chicago'
+data.current # => OpenWeather::Models::OneCall::CurrentWeather
+data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
 ```
 
 ## Configuration
