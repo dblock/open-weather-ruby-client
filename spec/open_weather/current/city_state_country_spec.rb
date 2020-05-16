@@ -34,6 +34,7 @@ RSpec.describe 'current_city', vcr: { cassette_name: 'weather/weather_name_state
     expect(data.weather.size).to eq 1
     expect(data.weather[0].description).to eq 'overcast clouds'
     expect(data.weather[0].icon).to eq '04n'
+    expect(data.weather[0].icon_uri).to eq URI.parse('http://openweathermap.org/img/wn/04n@2x.png')
     expect(data.weather[0].id).to eq 804
     expect(data.weather[0].main).to eq 'Clouds'
     expect(data.wind.deg).to be nil
