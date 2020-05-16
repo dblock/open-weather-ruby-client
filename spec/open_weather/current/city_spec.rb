@@ -21,6 +21,8 @@ RSpec.describe 'current_city_name', vcr: { cassette_name: 'weather/weather_name'
     expect(data.main.pressure).to eq 1005
     expect(data.main.temp).to eq 282.57
     expect(data.main.temp_max).to eq 283.15
+    expect(data.main.temp_max_c).to eq 10.0
+    expect(data.main.temp_max_f).to eq 50.0
     expect(data.main.temp_min).to eq 281.48
     expect(data.name).to eq 'London'
     expect(data.rain['1h']).to eq 0.51

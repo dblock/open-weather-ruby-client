@@ -17,6 +17,9 @@ RSpec.describe 'current_city', vcr: { cassette_name: 'weather/weather_name_state
     expect(data.dt).to eq Time.parse('2020-04-28 03:49:45 UTC')
     expect(data.id).to eq 5_128_581
     expect(data.main.feels_like).to eq 276.82
+    expect(data.main.feels_like_c).to eq 3.67
+    expect(data.main.feels_like_k).to eq 276.82
+    expect(data.main.feels_like_f).to eq 38.61
     expect(data.main.humidity).to eq 75
     expect(data.main.pressure).to eq 1019
     expect(data.main.temp).to eq 279.86

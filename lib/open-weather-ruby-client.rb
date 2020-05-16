@@ -16,13 +16,11 @@ require_relative 'open_weather/logger'
 
 require_relative 'open_weather/errors/fault'
 
-require_relative 'open_weather/models/model'
-
+require_relative 'open_weather/models'
 require_relative 'open_weather/raise_error'
 require_relative 'open_weather/connection'
 require_relative 'open_weather/request'
 require_relative 'open_weather/config'
 require_relative 'open_weather/errors'
-require_relative 'open_weather/models'
 require_relative 'open_weather/endpoints'
 require_relative 'open_weather/client'

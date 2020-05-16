@@ -38,7 +38,7 @@ module OpenWeather
             options.delete(:country)
           ].compact.join(',')
         end
-        OpenWeather::Models::City::Weather.new(get('weather', options))
+        OpenWeather::Models::City::Weather.new(get('weather', options), options)
       end
 
       def current_cities_geo_box(*args)
@@ -51,7 +51,7 @@ module OpenWeather
           options.delete(:lat_top),
           options.delete(:zoom)
         ].join(',')
-        OpenWeather::Models::List.new(get('box/city', options))
+        OpenWeather::Models::List.new(get('box/city', options), options)
       end
 
       def current_cities_geo_circle(*args)
@@ -63,7 +63,7 @@ module OpenWeather
           options[:cnt] = args.shift || 1
         end
 
-        OpenWeather::Models::List.new(get('find', options))
+        OpenWeather::Models::List.new(get('find', options), options)
       end
 
       def current_cities_id(*args)
@@ -71,7 +71,7 @@ module OpenWeather
         options[:id] = args.join(',') if args.any?
         options[:id] = options.delete(:ids) if options.key?(:ids)
         options[:id] = options[:id].join(',') if options[:id].is_a?(Array)
-        OpenWeather::Models::List.new(get('group', options))
+        OpenWeather::Models::List.new(get('group', options), options)
       end
     end
   end

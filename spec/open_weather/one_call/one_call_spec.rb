@@ -53,6 +53,9 @@ RSpec.describe 'one_call' do
     expect(data.hourly.size).to eq 24
     expect(data.hourly.first).to be_a OpenWeather::Models::OneCall::HourlyWeather
     expect(data.hourly.first.temp).to eq 295.79
+    expect(data.hourly.first.temp_c).to eq 22.64
+    expect(data.hourly.first.temp_k).to eq 295.79
+    expect(data.hourly.first.temp_f).to eq 72.75
     expect(data.minutely).to be nil
     expect(data.daily).to be nil
   end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'models/mixins'
 require_relative 'models/model'
 require_relative 'models/clouds'
 require_relative 'models/coord'

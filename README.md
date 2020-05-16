@@ -6,7 +6,7 @@ OpenWeather Ruby Client
 
 A Ruby client for the [OpenWeather API v2.5](https://openweathermap.org/api).
 
-Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_open_weather_map), provides a rich first class interface to OpenWeather models, implements more consistent error handling, and is built with thorough test coverage using actual OpenWeather data.
+Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_open_weather_map), provides a rich first class interface to OpenWeather models, built-in metrics conversion, implements more consistent error handling, and is built with thorough test coverage using actual OpenWeather data.
 
 ## Table of Contents
 
@@ -60,7 +60,9 @@ data.main.feels_like # => 277.73
 data.main.humidity # => 81
 data.main.pressure # => 1005
 data.main.temp # => 282.57
-data.main.temp_max # => 283.15
+data.main.temp_max # => 283.15, in Kelvin
+data.main.temp_max_c # => 10, in Celcius
+data.main.temp_max_f # => 50.0, in Farenheit
 data.main.temp_min # => 281.48
 ```
 
@@ -71,6 +73,15 @@ data = client.current_weather(city: 'Moscow', units: 'metric', lang: 'ru') # => 
 
 data.name # => 'Москва'
 data.main.temp # => 12
+```
+
+All temperature fields are provided with conversion support. Use `_k` for Kelvin, `_c` for Celcius and `_f` for Farenheit, regardless of the API units chosen.
+
+```ruby
+data.main.temp_max # => 12, in Celcius, metric as requested
+data.main.temp_max_c # => 12, in Celcius
+data.main.temp_max_k # => 285.15, in Kelvin
+data.main.temp_max_f # => 53.6, in Farenheit
 ```
 
 Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
