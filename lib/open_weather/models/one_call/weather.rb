@@ -7,10 +7,10 @@ module OpenWeather
         property 'lat' #  geographical coordinates of the location (latitude)
         property 'lon' # geographical coordinates of the location (longitude)
         property 'timezone' # timezone name for the requested location
-        property 'current'
-        property 'minutely'
-        property 'hourly'
-        property 'daily'
+        property 'current' # current weather
+        property 'minutely' # minute forecast weather
+        property 'hourly' # hourly forecast weather
+        property 'daily' # daily forecast weather
 
         def initialize(args = nil, options = {})
           super args, options

@@ -5,6 +5,7 @@ module OpenWeather
     class Model < Hashie::Trash
       include Hashie::Extensions::IgnoreUndeclared
       include OpenWeather::Models::Mixins::Temp
+      include OpenWeather::Models::Mixins::Speed
 
       attr_reader :options
 

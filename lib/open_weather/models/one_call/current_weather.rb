@@ -15,8 +15,8 @@ module OpenWeather
         property 'clouds' # cloudiness, %
         property 'uvi' # UV index
         property 'visibility' # average visibility, meters
-        property 'wind_speed' # wind speed
-        property 'wind_gust' # wind gust
+        speed_property 'wind_speed' # wind speed
+        speed_property 'wind_gust' # wind gust
         property 'wind_deg' # wind direction, degrees (meteorological)
         property 'rain'
         property 'snow'

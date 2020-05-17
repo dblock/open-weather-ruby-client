@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=api-key&id=524901&lang=fr&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 17 May 2020 12:15:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '455'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?id=524901&lang=fr&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":37.62,"lat":55.75},"weather":[{"id":520,"main":"Rain","description":"petites
+        averses","icon":"09d"}],"base":"stations","main":{"temp":13.67,"feels_like":5.79,"temp_min":13,"temp_max":14,"pressure":1010,"humidity":47},"visibility":10000,"wind":{"speed":9,"deg":260},"clouds":{"all":40},"dt":1589717622,"sys":{"type":1,"id":9029,"country":"RU","sunrise":1589678040,"sunset":1589737084},"timezone":10800,"id":524901,"name":"Moscou","cod":200}'
+    http_version: null
+  recorded_at: Sun, 17 May 2020 12:15:55 GMT
+recorded_with: VCR 5.1.0
