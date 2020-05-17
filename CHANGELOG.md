@@ -1,3 +1,7 @@
+### 0.2.1 (Next)
+
+* Your contribution here.
+
 ### 0.2.0 (2020/05/17)
 
 * [#14](https://github.com/dblock/open-weather-ruby-client/pull/14): Added support for One Call API - [@dblock](https://github.com/dblock).
