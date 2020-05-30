@@ -21,6 +21,7 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Current and Forecast Weather](#current-and-forecast-weather)
     - [Historical Weather](#historical-weather)
   - [Stations](#stations)
+    - [Register a Station](#register-a-station)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
