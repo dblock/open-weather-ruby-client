@@ -19,7 +19,8 @@ module OpenWeather
       end
 
       def create!
-        OpenWeather::Client.new.register_station(to_h)
+        data = OpenWeather::Client.new.register_station(to_h)
+        update_attributes!(data)
       end
     end
   end
