@@ -10,7 +10,8 @@ module OpenWeather
       attr_reader :options
 
       def initialize(args = nil, options = {})
-        super args
+        transformed_args = args.respond_to?(:transform_keys) ? args.transform_keys(&:to_s) : args
+        super transformed_args
         @options = { units: OpenWeather.config.units }.merge(options || {})
       end
 

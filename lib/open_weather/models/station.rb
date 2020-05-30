@@ -14,10 +14,6 @@ module OpenWeather
       property 'updated_at' # timestamp when station was updated
       property 'rank' # rank of station
 
-      def initialize(args = nil, options = {})
-        super args.transform_keys(&:to_s), options
-      end
-
       def create!
         data = OpenWeather::Client.new.register_station(to_h)
         update_attributes!(data)
