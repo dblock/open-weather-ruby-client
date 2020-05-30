@@ -14,9 +14,8 @@ module OpenWeather
       property 'updated_at' # timestamp when station was updated
       property 'rank' # rank of station
 
-      def register!
-        data = OpenWeather::Client.new.register_station(to_h)
-        update_attributes!(data)
+      def self.register!(attributes)
+        OpenWeather::Client.new.register_station(attributes)
       end
     end
   end

@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe OpenWeather::Models::Station do
-  describe '#register!' do
+  describe '.register!' do
     let(:create_attributes) do
       {
         external_id: 'SF_TEST001',
@@ -13,7 +13,10 @@ RSpec.describe OpenWeather::Models::Station do
         altitude: 150
       }
     end
-    let(:client) { instance_double(OpenWeather::Client) }
+    let(:client) do
+      instance_double(OpenWeather::Client,
+                      register_station: described_class.new(create_attributes))
+    end
 
     before do
       allow(OpenWeather::Client).to receive(:new).and_return(client)
@@ -22,18 +25,15 @@ RSpec.describe OpenWeather::Models::Station do
     it 'registers a station via the Client' do
       expect(client)
         .to receive(:register_station)
-        .with(create_attributes.transform_keys(&:to_s))
+        .with(create_attributes)
 
-      described_class.new(create_attributes).register!
+      described_class.register!(create_attributes)
     end
 
-    it 'sets the internal id' do
-      allow(client)
-        .to receive(:register_station)
-        .and_return('ID' => 'internal_id')
-      model = described_class.new(create_attributes)
-      model.register!
-      expect(model.id).to eq('internal_id')
+    it 'returns an instance of the Station' do
+      model = described_class.register!(create_attributes)
+      expect(model).to be_a(described_class)
+      expect(model).to have_attributes(create_attributes)
     end
   end
 end
