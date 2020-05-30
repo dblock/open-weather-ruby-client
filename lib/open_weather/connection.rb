@@ -11,7 +11,10 @@ module OpenWeather
     def connection
       @connection ||= begin
         options = {
-          headers: headers.merge('Accept' => 'application/json; charset=utf-8')
+          headers: headers.merge(
+            'Accept' => 'application/json; charset=utf-8',
+            'Content-Type' => 'application/json'
+          )
         }
 
         options[:headers]['User-Agent'] = user_agent if user_agent
