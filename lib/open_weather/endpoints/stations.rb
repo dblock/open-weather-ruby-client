@@ -3,7 +3,8 @@
 module OpenWeather
   module Endpoints
     module Stations
-      def register_station(external_id:, name:, lat:, lon:, altitude:)
+      def register_station(options = {})
+        OpenWeather::Models::Station.new(post('stations', options))
       end
     end
   end
