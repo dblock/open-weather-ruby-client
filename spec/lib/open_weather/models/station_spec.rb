@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe OpenWeather::Models::Station do
-  describe '#create!' do
+  describe '#register!' do
     let(:create_attributes) do
       {
         external_id: 'SF_TEST001',
@@ -24,7 +24,7 @@ RSpec.describe OpenWeather::Models::Station do
         .to receive(:register_station)
         .with(create_attributes.transform_keys(&:to_s))
 
-      described_class.new(create_attributes).create!
+      described_class.new(create_attributes).register!
     end
 
     it 'sets the internal id' do
@@ -32,7 +32,7 @@ RSpec.describe OpenWeather::Models::Station do
         .to receive(:register_station)
         .and_return('ID' => 'internal_id')
       model = described_class.new(create_attributes)
-      model.create!
+      model.register!
       expect(model.id).to eq('internal_id')
     end
   end
