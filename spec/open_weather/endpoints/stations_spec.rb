@@ -16,6 +16,7 @@ RSpec.describe 'stations' do
     )
     expect(data).to be_a(OpenWeather::Models::Station)
     expect(data).to have_attributes(
+      id: '5ed21a12cca8ce0001f1aef1',
       external_id: 'SF_TEST001',
       name: 'San Francisco Test Station',
       latitude: 37.76,
