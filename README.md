@@ -201,13 +201,13 @@ The [Stations API](https://openweathermap.org/stations) lets your manage persona
 
 #### Register a Station
 
-To register a station, you can either call the client method:
+To register a station, you can call the client method:
 ```ruby
 data = client.register_station(external_id: 'SF_TEST001', ...) # => OpenWeather::Models::Station
 data.id # => '5ed2118acca8ce0001f1aeg1'
 data.external_id # => 'SF_TEST001'
 ```
-Or and call the `register!` on the `Station` class:
+Alternatively, call `register!` on the `Station` class:
 ```ruby
 data = OpenWeather::Models::Station.register!(external_id: 'SF_TEST001', ...)
 data.id # => '5ed2118acca8ce0001f1aeg1'
