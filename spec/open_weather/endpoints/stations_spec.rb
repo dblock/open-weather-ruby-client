@@ -3,10 +3,9 @@
 require 'spec_helper'
 
 RSpec.describe 'stations' do
-  include_context 'API client'
+  include_context 'API client', endpoint: 'https://api.openweathermap.org/data/3.0'
 
   it 'registers a station', vcr: { cassette_name: 'stations/register_success' } do
-    client.endpoint = 'https://api.openweathermap.org/data/3.0'
     data = client.register_station(
       external_id: 'SF_TEST001',
       name: 'San Francisco Test Station',
