@@ -3,8 +3,7 @@
 module OpenWeather
   module Models
     class Station < Model
-      # internal identifier for the station
-      property 'id', from: 'ID'
+      property 'id', from: 'ID' # internal identifier for the station
       property 'external_id' # external identifier for the station
       property 'name' # name of the station
       property 'latitude' #  geographical coordinates of the location (latitude)
