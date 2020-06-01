@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 RSpec.describe OpenWeather::Models::Station do
+  include_context 'API client', endpoint: 'https://api.openweathermap.org/data/3.0'
+
   describe '.register!' do
     let(:create_attributes) do
       {
@@ -13,24 +15,12 @@ RSpec.describe OpenWeather::Models::Station do
         altitude: 150
       }
     end
-    let(:client) do
-      instance_double(OpenWeather::Client,
-                      register_station: described_class.new(create_attributes))
-    end
 
     before do
       allow(OpenWeather::Client).to receive(:new).and_return(client)
     end
 
-    it 'registers a station via the Client' do
-      expect(client)
-        .to receive(:register_station)
-        .with(create_attributes)
-
-      described_class.register!(create_attributes)
-    end
-
-    it 'returns an instance of the Station' do
+    it 'registers a station via the Client', vcr: { cassette_name: 'stations/register_success' } do
       model = described_class.register!(create_attributes)
       expect(model).to be_a(described_class)
       expect(model).to have_attributes(create_attributes)
