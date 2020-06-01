@@ -22,6 +22,7 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Historical Weather](#historical-weather)
   - [Stations](#stations)
     - [Register a Station](#register-a-station)
+    - [List Stations](#list-stations)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -212,6 +213,13 @@ Alternatively, call `register!` on an instance of `Station`:
 model = OpenWeather::Models::Station.new(external_id: 'SF_TEST001', ...)
 model.register!
 model.id # => '5ed2118acca8ce0001f1aeg1'
+```
+
+#### List Stations
+
+To list all stations, you can call the client method:
+```ruby
+data = client.list_stations # => Array[OpenWeather::Models::Station]
 ```
 
 ## Configuration
