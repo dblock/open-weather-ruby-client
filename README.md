@@ -20,6 +20,8 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
   - [One Call](#one-call)
     - [Current and Forecast Weather](#current-and-forecast-weather)
     - [Historical Weather](#historical-weather)
+  - [Stations](#stations)
+    - [Register a Station](#register-a-station)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -191,6 +193,25 @@ data.lon # => -94.04
 data.timezone # => 'America/Chicago'
 data.current # => OpenWeather::Models::OneCall::CurrentWeather
 data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
+```
+
+### Stations
+
+The [Stations API](https://openweathermap.org/stations) lets your manage personal weather stations and measurements.
+
+#### Register a Station
+
+To register a station, you can call the client method:
+```ruby
+data = client.register_station(external_id: 'SF_TEST001', ...) # => OpenWeather::Models::Station
+data.id # => '5ed2118acca8ce0001f1aeg1'
+data.external_id # => 'SF_TEST001'
+```
+Alternatively, call `register!` on an instance of `Station`:
+```ruby
+model = OpenWeather::Models::Station.new(external_id: 'SF_TEST001', ...)
+model.register!
+model.id # => '5ed2118acca8ce0001f1aeg1'
 ```
 
 ## Configuration

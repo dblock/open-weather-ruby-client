@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openweathermap.org/data/3.0/stations?appid=api-key
+    body:
+      encoding: UTF-8
+      string: '{"external_id":"SF_TEST001","name":"San Francisco Test Station","latitude":37.76,"longitude":-122.43,"altitude":150}'
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - OpenWeather Ruby Client/0.2.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 30 May 2020 08:32:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '303'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE
+    body:
+      encoding: UTF-8
+      string: '{"ID":"5ed21a12cca8ce0001f1aef1","updated_at":"2020-05-30T08:32:18.956523908Z","created_at":"2020-05-30T08:32:18.956523832Z","user_id":"example_user_id","external_id":"SF_TEST001","name":"San
+        Francisco Test Station","latitude":37.76,"longitude":-122.43,"altitude":150,"rank":10,"source_type":5}'
+  recorded_at: Sat, 30 May 2020 08:32:19 GMT
+recorded_with: VCR 6.0.0
