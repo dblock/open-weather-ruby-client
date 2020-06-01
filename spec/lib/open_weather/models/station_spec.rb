@@ -21,9 +21,10 @@ RSpec.describe OpenWeather::Models::Station do
     end
 
     it 'registers a station via the Client', vcr: { cassette_name: 'stations/register_success' } do
-      model = described_class.register!(create_attributes)
-      expect(model).to be_a(described_class)
-      expect(model).to have_attributes(create_attributes)
+      model = described_class.new(create_attributes)
+      result = model.register!
+      expect(result.object_id).to eq(model.object_id)
+      expect(result).to have_attributes(create_attributes.merge(id: '5ed21a12cca8ce0001f1aef1'))
     end
   end
 end
