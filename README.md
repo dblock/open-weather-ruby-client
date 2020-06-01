@@ -209,9 +209,9 @@ data.external_id # => 'SF_TEST001'
 ```
 Alternatively, call `register!` on the `Station` class:
 ```ruby
-data = OpenWeather::Models::Station.register!(external_id: 'SF_TEST001', ...)
-data.id # => '5ed2118acca8ce0001f1aeg1'
-data.external_id # => 'SF_TEST001'
+model = OpenWeather::Models::Station.new(external_id: 'SF_TEST001', ...)
+model.register!
+model.id # => '5ed2118acca8ce0001f1aeg1'
 ```
 
 ## Configuration
