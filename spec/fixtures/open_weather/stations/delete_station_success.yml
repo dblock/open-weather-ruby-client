@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.openweathermap.org/data/3.0/stations/5ed21311cca8ce0001f1aef0?appid=api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 02 Jun 2020 15:05:30 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 02 Jun 2020 15:05:30 GMT
+recorded_with: VCR 4.0.0

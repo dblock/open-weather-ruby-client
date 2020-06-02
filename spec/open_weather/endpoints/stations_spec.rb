@@ -69,4 +69,11 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       expect(data).to have_attributes(update_attributes)
     end
   end
+
+  describe '#delete_station' do
+    it 'deletes a station', vcr: { cassette_name: 'stations/delete_station_success' } do
+      data = client.delete_station('5ed21311cca8ce0001f1aef0')
+      expect(data).to be_nil
+    end
+  end
 end

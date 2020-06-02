@@ -18,6 +18,11 @@ module OpenWeather
       def update_station(id, options = {})
         OpenWeather::Models::Station.new(put("stations/#{id}", options))
       end
+
+      def delete_station(id)
+        delete("stations/#{id}")
+        nil
+      end
     end
   end
 end
