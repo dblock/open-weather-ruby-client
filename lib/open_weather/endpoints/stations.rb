@@ -14,6 +14,10 @@ module OpenWeather
       def get_station(id)
         OpenWeather::Models::Station.new(get("stations/#{id}"))
       end
+
+      def update_station(id, options = {})
+        OpenWeather::Models::Station.new(put("stations/#{id}", options))
+      end
     end
   end
 end

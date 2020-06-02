@@ -57,4 +57,16 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       )
     end
   end
+
+  describe '#update_station' do
+    it 'updates a station', vcr: { cassette_name: 'stations/update_station_success' } do
+      update_attributes = {
+        external_id: 'SF_TEST002',
+        name: 'San Francisco Test Station 2'
+      }
+      data = client.update_station('5ed21311cca8ce0001f1aef0', update_attributes)
+      expect(data).to be_a(OpenWeather::Models::Station)
+      expect(data).to have_attributes(update_attributes)
+    end
+  end
 end
