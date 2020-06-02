@@ -23,6 +23,9 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
   - [Stations](#stations)
     - [Register a Station](#register-a-station)
     - [List Stations](#list-stations)
+    - [Get Station](#get-station)
+    - [Update Station](#update-station)
+    - [Delete Station](#delete-station)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -220,6 +223,33 @@ model.id # => '5ed2118acca8ce0001f1aeg1'
 To list all stations, you can call the client method:
 ```ruby
 data = client.list_stations # => Array[OpenWeather::Models::Station]
+```
+
+#### Get Station
+
+To get a stations, you can call the client method:
+```ruby
+data = client.get_station('5ed2118acca8ce0001f1aeg1') # => OpenWeather::Models::Station
+```
+
+#### Update Station
+
+To update a station, you can call the client method:
+```ruby
+data = client.update_station('5ed2118acca8ce0001f1aeg1', external_id: 'SF_TEST002') # => OpenWeather::Models::Station
+```
+Alternatively, call `update!` on an instance of `Station`:
+```ruby
+model = OpenWeather::Models::Station.new(external_id: 'SF_TEST001', ...).register!
+model.update!(external_id: 'SF_TEST002')
+model.external_id # => 'SF_TEST002'
+```
+
+#### Delete Station
+
+To delete a station, you can call the client method:
+```ruby
+data = client.delete_station('5ed2118acca8ce0001f1aeg1') # => nil
 ```
 
 ## Configuration
