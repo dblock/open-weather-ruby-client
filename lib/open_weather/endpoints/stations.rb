@@ -10,6 +10,10 @@ module OpenWeather
       def list_stations
         get('stations').map { |data| OpenWeather::Models::Station.new(data) }
       end
+
+      def get_station(id)
+        OpenWeather::Models::Station.new(get("stations/#{id}"))
+      end
     end
   end
 end
