@@ -19,6 +19,17 @@ module OpenWeather
 
         self
       end
+
+      def update!(attributes)
+        data = OpenWeather::Client.new.update_station(id, attributes)
+        update_attributes!(data)
+
+        self
+      end
+
+      def delete!
+        OpenWeather::Client.new.delete_station(id)
+      end
     end
   end
 end
