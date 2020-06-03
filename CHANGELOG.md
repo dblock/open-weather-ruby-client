@@ -1,9 +1,7 @@
 ### 0.2.1 (Next)
 
 * Your contribution here.
-* [#20](https://github.com/dblock/open-weather-ruby-client/pull/20): Add remaining stations endpoints - [@wasabigeek](https://github.com/wasabigeek).
-* [#19](https://github.com/dblock/open-weather-ruby-client/pull/19): Add list_stations endpoint - [@wasabigeek](https://github.com/wasabigeek).
-* [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Add register_station endpoint - [@wasabigeek](https://github.com/wasabigeek).
+* [#20](https://github.com/dblock/open-weather-ruby-client/pull/20), [#19](https://github.com/dblock/open-weather-ruby-client/pull/19), [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Added support for Stations API - [@wasabigeek](https://github.com/wasabigeek).
 
 ### 0.2.0 (2020/05/17)
 
