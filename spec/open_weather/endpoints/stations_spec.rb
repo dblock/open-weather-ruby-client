@@ -56,6 +56,12 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         altitude: 150
       )
     end
+
+    context 'with invalid id' do
+      it 'raises error' do
+        expect { client.delete_station(nil) }.to raise_error ArgumentError
+      end
+    end
   end
 
   describe '#update_station' do
@@ -68,12 +74,24 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       expect(data).to be_a(OpenWeather::Models::Station)
       expect(data).to have_attributes(update_attributes)
     end
+
+    context 'with invalid id' do
+      it 'raises error' do
+        expect { client.update_station(nil, {}) }.to raise_error ArgumentError
+      end
+    end
   end
 
   describe '#delete_station' do
     it 'deletes a station', vcr: { cassette_name: 'stations/delete_station_success' } do
       data = client.delete_station('5ed21311cca8ce0001f1aef0')
       expect(data).to be_nil
+    end
+
+    context 'with invalid id' do
+      it 'raises error' do
+        expect { client.delete_station(nil) }.to raise_error ArgumentError
+      end
     end
   end
 end
