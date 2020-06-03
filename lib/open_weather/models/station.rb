@@ -26,6 +26,10 @@ module OpenWeather
 
         self
       end
+
+      def delete!
+        OpenWeather::Client.new.delete_station(id)
+      end
     end
   end
 end

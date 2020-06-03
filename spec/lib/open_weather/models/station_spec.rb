@@ -47,4 +47,22 @@ RSpec.describe OpenWeather::Models::Station do
       expect(result).to have_attributes(update_attributes)
     end
   end
+
+  describe '.delete!' do
+    before do
+      allow(OpenWeather::Client).to receive(:new).and_return(client)
+    end
+
+    it 'deletes a station via the Client', vcr: { cassette_name: 'stations/delete_station_success' } do
+      id = '5ed21311cca8ce0001f1aef0'
+      expect(client)
+        .to receive(:delete_station)
+        .with(id)
+        .and_call_original
+
+      model = OpenWeather::Models::Station.new(id: id)
+      result = model.delete!
+      expect(result).to be_nil
+    end
+  end
 end
