@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openweathermap.org/data/3.0/measurements?appid=api-key
+    body:
+      encoding: UTF-8
+      string: '[{"station_id":-1,"dt":1479817340,"temperature":18.7,"wind_speed":1.2,"wind_gust":3.4,"pressure":1021,"humidity":87,"rain_1h":2,"clouds":[{"condition":"NSC"}]}]'
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 06 Jun 2020 12:13:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"code":400001,"message":"unmarshal type error: expected=string, got=number,
+        offset=17"}'
+  recorded_at: Sat, 06 Jun 2020 12:13:33 GMT
+recorded_with: VCR 6.0.0

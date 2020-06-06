@@ -115,5 +115,27 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       data = client.create_measurements([create_params])
       expect(data).to be_nil
     end
+
+    context 'when station does not exist' do
+      it 'raises error', vcr: { cassette_name: 'stations/create_measurement_failed_with_invalid_station' } do
+        create_params = {
+          "station_id": -1,
+          "dt": 1479817340,
+          "temperature": 18.7,
+          "wind_speed": 1.2,
+          "wind_gust": 3.4,
+          "pressure": 1021,
+          "humidity": 87,
+          "rain_1h": 2,
+          "clouds": [
+            {
+              "condition": 'NSC'
+            }
+          ]
+        }
+        expect { client.create_measurements([create_params]) }
+          .to raise_error(OpenWeather::Errors::Fault)
+      end
+    end
   end
 end
