@@ -94,4 +94,26 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       end
     end
   end
+
+  describe '#create_measurements' do
+    it 'creates measurements', vcr: { cassette_name: 'stations/create_measurement_success' } do
+      create_params = {
+        "station_id": '5ed21a12cca8ce0001f1aef1',
+        "dt": 1479817340,
+        "temperature": 18.7,
+        "wind_speed": 1.2,
+        "wind_gust": 3.4,
+        "pressure": 1021,
+        "humidity": 87,
+        "rain_1h": 2,
+        "clouds": [
+          {
+            "condition": 'NSC'
+          }
+        ]
+      }
+      data = client.create_measurements([create_params])
+      expect(data).to be_nil
+    end
+  end
 end

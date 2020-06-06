@@ -34,7 +34,11 @@ module OpenWeather
         when :post, :put
           request.path = path
           request.params = { appid: options.delete(:appid) }
-          request.body = options.to_json unless options.empty?
+          if options.key?(:body)
+            request.body = options.delete(:body).to_json
+          elsif options.present?
+            request.body = options.to_json
+          end
         end
         request.options.merge!(options.delete(:request)) if options.key?(:request)
       end

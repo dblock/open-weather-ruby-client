@@ -30,6 +30,11 @@ module OpenWeather
         nil
       end
 
+      def create_measurements(measurements, options = {})
+        post('measurements', options.merge(body: measurements))
+        nil
+      end
+
       private
 
       def validate_id(id)
