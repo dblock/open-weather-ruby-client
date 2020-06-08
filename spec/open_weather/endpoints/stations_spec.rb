@@ -138,4 +138,17 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       end
     end
   end
+
+  describe '#get_measurements' do
+    it 'gets measurements', vcr: { cassette_name: 'stations/get_measurement_success' } do
+      data = client.get_measurements(
+        station_id: '5ed21a12cca8ce0001f1aef1',
+        type: 'd',
+        limit: 100,
+        from: 1469817340,
+        to: 1591620047
+      )
+      expect(data).to eq({})
+    end
+  end
 end

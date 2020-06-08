@@ -35,6 +35,10 @@ module OpenWeather
         nil
       end
 
+      def get_measurements(station_id:, type:, limit:, from:, to:)
+        get('measurements', { station_id: station_id, type: type, limit: limit, from: from, to: to })
+      end
+
       private
 
       def validate_id(id)
