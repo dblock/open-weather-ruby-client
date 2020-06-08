@@ -23,7 +23,8 @@ module OpenWeather
     #
     # @param [Symbol] method - Faraday HTTP method.
     # @param [String] path - URL to send.
-    # @param [Hash] options - :appid, :lang, :units, :endpoint, :body keys will configure the request. The rest will be jsonified the method is POST/PUT.
+    # @param [Hash] options - :appid, :lang, :units, :endpoint, :body keys will configure the request.
+    #   The rest will be converted to query params for GET/DELETE, or jsonified for POST/PUT.
     #
     # @return [Object] - the Faraday::Response#body.
     #
