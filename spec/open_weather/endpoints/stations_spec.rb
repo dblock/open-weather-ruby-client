@@ -134,7 +134,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
           ]
         }
         expect { client.create_measurements([create_params]) }
-          .to raise_error(OpenWeather::Errors::Fault)
+          .to raise_error(OpenWeather::Errors::Fault, /expected=string, got=number/)
       end
     end
   end
