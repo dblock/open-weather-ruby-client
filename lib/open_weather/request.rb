@@ -20,6 +20,13 @@ module OpenWeather
 
     private
 
+    #
+    # @param [Symbol] method - Faraday HTTP method.
+    # @param [String] path - URL to send.
+    # @param [Hash] options - :appid, :lang, :units, :endpoint, :body keys will configure the request. The rest will be jsonified the method is POST/PUT.
+    #
+    # @return [Object] - the Faraday::Response#body.
+    #
     def request(method, path, options)
       options = options.dup
       options[:appid] ||= api_key if api_key.present?
@@ -36,7 +43,7 @@ module OpenWeather
           request.params = { appid: options.delete(:appid) }
           if options.key?(:body)
             request.body = options.delete(:body).to_json
-          elsif options.present?
+          elsif !options.empty? # is a Hash, so `.present?` doesn't capture the same behaviour
             request.body = options.to_json
           end
         end
