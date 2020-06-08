@@ -148,7 +148,14 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         from: 1469817340,
         to: 1591620047
       )
-      expect(data).to eq({})
+      expect(data.size).to eq(1)
+      expect(data.first['station_id']).to eq('5ed21a12cca8ce0001f1aef1')
+    end
+
+    context 'without mandatory params' do
+      it 'raises error' do
+        expect { client.get_measurements(something: 'something') }.to raise_error(ArgumentError, /station_id, type, limit, from, to/)
+      end
     end
   end
 end

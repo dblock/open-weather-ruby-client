@@ -35,8 +35,12 @@ module OpenWeather
         nil
       end
 
-      def get_measurements(station_id:, type:, limit:, from:, to:)
-        get('measurements', { station_id: station_id, type: type, limit: limit, from: from, to: to })
+      def get_measurements(options)
+        required_keys = %i[station_id type limit from to]
+        missing_keys = required_keys - options.keys
+        raise ArgumentError, "Missing params: #{missing_keys.join(', ')}" unless missing_keys.empty?
+
+        get('measurements', options)
       end
 
       private
