@@ -124,7 +124,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
     context 'when station does not exist' do
       it 'raises error', vcr: { cassette_name: 'stations/create_measurement_failed_with_invalid_station' } do
         create_params = {
-          "station_id": -1,
+          "station_id": 'abcde',
           "dt": 1479817340,
           "temperature": 18.7,
           "wind_speed": 1.2,
@@ -139,7 +139,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
           ]
         }
         expect { client.create_measurements([create_params]) }
-          .to raise_error(OpenWeather::Errors::Fault, /expected=string, got=number/)
+          .to raise_error(OpenWeather::Errors::Fault, /Station id is invalid/)
       end
     end
   end
