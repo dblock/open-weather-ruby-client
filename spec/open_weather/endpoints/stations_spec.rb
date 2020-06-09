@@ -149,7 +149,12 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         to: 1591620047
       )
       expect(data.size).to eq(1)
-      expect(data.first['station_id']).to eq('5ed21a12cca8ce0001f1aef1')
+      expect(data.first).to be_a(OpenWeather::Models::Stations::Measurement)
+      expect(data.first).to have_attributes(
+        station_id: '5ed21a12cca8ce0001f1aef1',
+        type: 'd',
+        date: 1479859200
+      )
     end
 
     context 'without mandatory params' do
