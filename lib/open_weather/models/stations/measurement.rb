@@ -7,11 +7,12 @@ module OpenWeather
         property 'station_id' # The internal ID of the station
         property 'type' # Type of the aggregated data - minute, hour or day. Specifies the letters m, h or d respectively
         property 'date' # Time of measurement
+        property 'temp'
 
         def initialize(args = nil, options = {})
           super args, options
 
-          # self.temp =
+          self.temp = OpenWeather::Models::Stations::Temp.new(temp, options) if temp
         end
       end
     end
@@ -19,13 +20,6 @@ module OpenWeather
 end
 
 
-
-    #     "temp": {
-    #         "max": 21.7,
-    #         "min": 21.7,
-    #         "average": 21.7,
-    #         "weight": 1
-    #     },
     #     "humidity": {
     #         "average": 77,
     #         "weight": 1

@@ -155,6 +155,13 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         type: 'd',
         date: 1479859200
       )
+      expect(data.first.temp).to be_a(OpenWeather::Models::Stations::Temp)
+      expect(data.first.temp).to have_attributes(
+        max: 18.7,
+        min: 18.7,
+        average: 18.7,
+        weight: 1
+      )
     end
 
     context 'without mandatory params' do
