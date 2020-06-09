@@ -154,34 +154,35 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         to: 1591620047
       )
       expect(data.size).to eq(1)
-      expect(data.first).to be_a(OpenWeather::Models::Stations::Measurement)
-      expect(data.first).to have_attributes(
+      measurement = data.first
+      expect(measurement).to be_a(OpenWeather::Models::Stations::Measurement)
+      expect(measurement).to have_attributes(
         station_id: '5ed21a12cca8ce0001f1aef1',
         type: 'd',
         date: 1479859200
       )
-      expect(data.first.temp).to be_a(OpenWeather::Models::Stations::Temp)
-      expect(data.first.temp).to have_attributes(
+      expect(measurement.temp).to be_a(OpenWeather::Models::Stations::Temp)
+      expect(measurement.temp).to have_attributes(
         max: 18.7,
         min: 18.7,
         average: 18.7,
         weight: 1
       )
-      expect(data.first.humidity).to be_a(OpenWeather::Models::Stations::Humidity)
-      expect(data.first.humidity).to have_attributes(
+      expect(measurement.humidity).to be_a(OpenWeather::Models::Stations::Humidity)
+      expect(measurement.humidity).to have_attributes(
         average: 87,
         weight: 1
       )
-      expect(data.first.pressure).to be_a(OpenWeather::Models::Stations::Pressure)
-      expect(data.first.pressure).to have_attributes(
+      expect(measurement.pressure).to be_a(OpenWeather::Models::Stations::Pressure)
+      expect(measurement.pressure).to have_attributes(
         min: 1021,
         max: 1021,
         average: 1021,
         weight: 1
       )
-      expect(data.first.precipitation).to be_a(OpenWeather::Models::Stations::Precipitation)
-      expect(data.first.precipitation).to have_attributes(rain: 2)
-      expect(data.first.wind).to eq({})
+      expect(measurement.precipitation).to be_a(OpenWeather::Models::Stations::Precipitation)
+      expect(measurement.precipitation).to have_attributes(rain: 2)
+      expect(measurement.wind).to eq({})
     end
 
     context 'without required params' do
