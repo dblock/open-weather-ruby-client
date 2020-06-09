@@ -44,7 +44,7 @@ module OpenWeather
           request.params = { appid: options.delete(:appid) }
           if options.key?(:body)
             request.body = options.delete(:body).to_json
-          elsif !options.empty? # is a Hash, so `.present?` doesn't capture the same behaviour
+          elsif !options.empty?
             request.body = options.to_json
           end
         end
