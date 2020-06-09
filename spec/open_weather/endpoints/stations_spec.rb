@@ -162,6 +162,11 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         average: 18.7,
         weight: 1
       )
+      expect(data.first.humidity).to be_a(OpenWeather::Models::Stations::Humidity)
+      expect(data.first.humidity).to have_attributes(
+        average: 87,
+        weight: 1
+      )
     end
 
     context 'without mandatory params' do

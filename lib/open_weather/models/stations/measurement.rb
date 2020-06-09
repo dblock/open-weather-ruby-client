@@ -8,22 +8,19 @@ module OpenWeather
         property 'type' # Type of the aggregated data - minute, hour or day. Specifies the letters m, h or d respectively
         property 'date' # Time of measurement
         property 'temp'
+        property 'humidity'
 
         def initialize(args = nil, options = {})
           super args, options
 
           self.temp = OpenWeather::Models::Stations::Temp.new(temp, options) if temp
+          self.humidity = OpenWeather::Models::Stations::Humidity.new(humidity, options) if humidity
         end
       end
     end
   end
 end
 
-
-    #     "humidity": {
-    #         "average": 77,
-    #         "weight": 1
-    #     },
     #     "wind": {},
     #     "pressure": {
     #         "min": 1031,
