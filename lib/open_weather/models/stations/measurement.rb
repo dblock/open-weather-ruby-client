@@ -9,24 +9,18 @@ module OpenWeather
         property 'date' # Time of measurement
         property 'temp'
         property 'humidity'
+        property 'wind'
+        property 'precipitation'
+        property 'pressure'
 
         def initialize(args = nil, options = {})
           super args, options
 
           self.temp = OpenWeather::Models::Stations::Temp.new(temp, options) if temp
           self.humidity = OpenWeather::Models::Stations::Humidity.new(humidity, options) if humidity
+          self.pressure = OpenWeather::Models::Stations::Pressure.new(pressure, options) if pressure
         end
       end
     end
   end
 end
-
-    #     "wind": {},
-    #     "pressure": {
-    #         "min": 1031,
-    #         "max": 1031,
-    #         "average": 1031,
-    #         "weight": 1
-    #     },
-    #     "precipitation": {}
-    # }

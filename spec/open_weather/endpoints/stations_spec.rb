@@ -167,6 +167,15 @@ RSpec.describe OpenWeather::Endpoints::Stations do
         average: 87,
         weight: 1
       )
+      expect(data.first.pressure).to be_a(OpenWeather::Models::Stations::Pressure)
+      expect(data.first.pressure).to have_attributes(
+        min: 1021,
+        max: 1021,
+        average: 1021,
+        weight: 1
+      )
+      expect(data.first.wind).to eq({})
+      # expect(data.first.precipitation).to eq({})
     end
 
     context 'without mandatory params' do
