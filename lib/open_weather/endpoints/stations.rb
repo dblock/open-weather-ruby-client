@@ -40,7 +40,7 @@ module OpenWeather
         missing_keys = required_keys - options.keys
         raise ArgumentError, "Missing params: #{missing_keys.join(', ')}" unless missing_keys.empty?
 
-        get('measurements', options).map { |m_hash| OpenWeather::Models::Stations::Measurement.new(m_hash) }
+        get('measurements', options).map { |m| OpenWeather::Models::Stations::Measurement.new(m) }
       end
 
       private
