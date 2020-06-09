@@ -112,6 +112,11 @@ RSpec.describe OpenWeather::Endpoints::Stations do
           }
         ]
       }
+
+      expect(client).to receive(:post)
+        .with('measurements', body: [create_params])
+        .and_call_original
+
       data = client.create_measurements([create_params])
       expect(data).to be_nil
     end
