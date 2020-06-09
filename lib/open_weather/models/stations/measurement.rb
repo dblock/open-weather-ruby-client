@@ -19,6 +19,7 @@ module OpenWeather
           self.temp = OpenWeather::Models::Stations::Temp.new(temp, options) if temp
           self.humidity = OpenWeather::Models::Stations::Humidity.new(humidity, options) if humidity
           self.pressure = OpenWeather::Models::Stations::Pressure.new(pressure, options) if pressure
+          self.precipitation = OpenWeather::Models::Stations::Precipitation.new(precipitation, options) if precipitation
         end
       end
     end
