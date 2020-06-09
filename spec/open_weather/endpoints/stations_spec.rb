@@ -179,7 +179,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       expect(data.first.wind).to eq({})
     end
 
-    context 'without mandatory params' do
+    context 'without required params' do
       it 'raises error' do
         expect { client.get_measurements(something: 'something') }.to raise_error(ArgumentError, /station_id, type, limit, from, to/)
       end

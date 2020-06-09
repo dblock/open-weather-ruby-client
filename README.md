@@ -280,7 +280,7 @@ client.create_measurements([
 
 #### Get Measurements
 
-To get measurements, call the client method with the mandatory parameters:
+To get measurements, call the client method with the required parameters:
 ```ruby
 client.get_measurements(
   station_id: '5ed21a12cca8ce0001f1aef1',
