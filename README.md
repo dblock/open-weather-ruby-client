@@ -288,7 +288,7 @@ client.get_measurements(
   limit: 100,
   from: 1469817340,
   to: 1591620047
-) # => Array[Hash]
+) # => Array[OpenWeather::Models::Stations::Measurement]
 ```
 
 ## Configuration
