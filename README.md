@@ -26,6 +26,8 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Get Station](#get-station)
     - [Update Station](#update-station)
     - [Delete Station](#delete-station)
+    - [Create Measurements](#create-measurements)
+    - [Get Measurements](#get-measurements)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -251,6 +253,42 @@ model.external_id # => 'SF_TEST002'
 To delete a station, call the client method:
 ```ruby
 data = client.delete_station('5ed2118acca8ce0001f1aeg1') # => nil
+```
+
+#### Create Measurements
+
+To create measurements, call the client method:
+```ruby
+client.create_measurements([
+  {
+    "station_id": -1,
+    "dt": 1479817340,
+    "temperature": 18.7,
+    "wind_speed": 1.2,
+    "wind_gust": 3.4,
+    "pressure": 1021,
+    "humidity": 87,
+    "rain_1h": 2,
+    "clouds": [
+      {
+        "condition": 'NSC'
+      }
+    ]
+  }
+]) # => nil
+```
+
+#### Get Measurements
+
+To get measurements, call the client method with the required parameters:
+```ruby
+client.get_measurements(
+  station_id: '5ed21a12cca8ce0001f1aef1',
+  type: 'd',
+  limit: 100,
+  from: 1469817340,
+  to: 1591620047
+) # => Array[OpenWeather::Models::Stations::Measurement]
 ```
 
 ## Configuration

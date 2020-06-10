@@ -94,4 +94,101 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       end
     end
   end
+
+  describe '#create_measurements' do
+    it 'creates measurements', vcr: { cassette_name: 'stations/create_measurement_success' } do
+      create_params = {
+        "station_id": '5ed21a12cca8ce0001f1aef1',
+        "dt": 1479817340,
+        "temperature": 18.7,
+        "wind_speed": 1.2,
+        "wind_gust": 3.4,
+        "pressure": 1021,
+        "humidity": 87,
+        "rain_1h": 2,
+        "clouds": [
+          {
+            "condition": 'NSC'
+          }
+        ]
+      }
+
+      expect(client).to receive(:post)
+        .with('measurements', body: [create_params])
+        .and_call_original
+
+      data = client.create_measurements([create_params])
+      expect(data).to be_nil
+    end
+
+    context 'when station does not exist' do
+      it 'raises error', vcr: { cassette_name: 'stations/create_measurement_failed_with_invalid_station' } do
+        create_params = {
+          "station_id": 'abcde',
+          "dt": 1479817340,
+          "temperature": 18.7,
+          "wind_speed": 1.2,
+          "wind_gust": 3.4,
+          "pressure": 1021,
+          "humidity": 87,
+          "rain_1h": 2,
+          "clouds": [
+            {
+              "condition": 'NSC'
+            }
+          ]
+        }
+        expect { client.create_measurements([create_params]) }
+          .to raise_error(OpenWeather::Errors::Fault, /Station id is invalid/)
+      end
+    end
+  end
+
+  describe '#get_measurements' do
+    it 'gets measurements', vcr: { cassette_name: 'stations/get_measurement_success' } do
+      data = client.get_measurements(
+        station_id: '5ed21a12cca8ce0001f1aef1',
+        type: 'd',
+        limit: 100,
+        from: 1469817340,
+        to: 1591620047
+      )
+      expect(data.size).to eq(1)
+      measurement = data.first
+      expect(measurement).to be_a(OpenWeather::Models::Stations::Measurement)
+      expect(measurement).to have_attributes(
+        station_id: '5ed21a12cca8ce0001f1aef1',
+        type: 'd',
+        date: 1479859200
+      )
+      expect(measurement.temp).to be_a(OpenWeather::Models::Stations::Temp)
+      expect(measurement.temp).to have_attributes(
+        max: 18.7,
+        min: 18.7,
+        average: 18.7,
+        weight: 1
+      )
+      expect(measurement.humidity).to be_a(OpenWeather::Models::Stations::Humidity)
+      expect(measurement.humidity).to have_attributes(
+        average: 87,
+        weight: 1
+      )
+      expect(measurement.pressure).to be_a(OpenWeather::Models::Stations::Pressure)
+      expect(measurement.pressure).to have_attributes(
+        min: 1021,
+        max: 1021,
+        average: 1021,
+        weight: 1
+      )
+      expect(measurement.precipitation).to be_a(OpenWeather::Models::Stations::Precipitation)
+      expect(measurement.precipitation).to have_attributes(rain: 2)
+      expect(measurement.wind).to eq({})
+    end
+
+    context 'without required params' do
+      it 'raises error' do
+        expect { client.get_measurements(something: 'something') }.to raise_error(ArgumentError, /station_id, type, limit, from, to/)
+      end
+    end
+  end
 end
