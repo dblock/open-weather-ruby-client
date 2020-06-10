@@ -38,7 +38,7 @@ module OpenWeather
       def get_measurements(options)
         required_keys = %i[station_id type limit from to]
         missing_keys = required_keys - options.keys
-        raise ArgumentError, "Missing params: #{missing_keys.join(', ')}" unless missing_keys.empty?
+        raise ArgumentError, "Missing params: #{missing_keys.join(', ')}" if missing_keys.any?
 
         get('measurements', options).map { |m| OpenWeather::Models::Stations::Measurement.new(m) }
       end
