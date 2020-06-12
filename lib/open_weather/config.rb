@@ -21,7 +21,7 @@ module OpenWeather
     attr_accessor(*Config::ATTRIBUTES)
 
     def reset
-      self.endpoint = 'https://api.openweathermap.org/data/2.5'
+      self.endpoint = 'https://api.openweathermap.org/data'
       self.api_key = nil
       self.user_agent = "OpenWeather Ruby Client/#{OpenWeather::VERSION}"
       self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil

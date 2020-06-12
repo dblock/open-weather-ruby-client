@@ -4,34 +4,34 @@ module OpenWeather
   module Endpoints
     module Stations
       def register_station(options = {})
-        OpenWeather::Models::Station.new(post('stations', options))
+        OpenWeather::Models::Station.new(post('3.0/stations', options))
       end
 
       def list_stations
-        get('stations').map { |data| OpenWeather::Models::Station.new(data) }
+        get('3.0/stations').map { |data| OpenWeather::Models::Station.new(data) }
       end
 
       def get_station(id)
         validate_id(id)
 
-        OpenWeather::Models::Station.new(get("stations/#{id}"))
+        OpenWeather::Models::Station.new(get("3.0/stations/#{id}"))
       end
 
       def update_station(id, options = {})
         validate_id(id)
 
-        OpenWeather::Models::Station.new(put("stations/#{id}", options))
+        OpenWeather::Models::Station.new(put("3.0/stations/#{id}", options))
       end
 
       def delete_station(id)
         validate_id(id)
 
-        delete("stations/#{id}")
+        delete("3.0/stations/#{id}")
         nil
       end
 
       def create_measurements(measurements, options = {})
-        post('measurements', options.merge(body: measurements))
+        post('3.0/measurements', options.merge(body: measurements))
         nil
       end
 
@@ -40,7 +40,7 @@ module OpenWeather
         missing_keys = required_keys - options.keys
         raise ArgumentError, "Missing params: #{missing_keys.join(', ')}" if missing_keys.any?
 
-        get('measurements', options).map { |m| OpenWeather::Models::Stations::Measurement.new(m) }
+        get('3.0/measurements', options).map { |m| OpenWeather::Models::Stations::Measurement.new(m) }
       end
 
       private
