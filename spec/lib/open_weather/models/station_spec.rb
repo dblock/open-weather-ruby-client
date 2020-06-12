@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe OpenWeather::Models::Station do
-  include_context 'API client', endpoint: 'https://api.openweathermap.org/data/3.0'
+  include_context 'API client'
 
   describe '.register!' do
     let(:create_attributes) do

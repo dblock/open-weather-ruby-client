@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe OpenWeather::Endpoints::Stations do
-  include_context 'API client', endpoint: 'https://api.openweathermap.org/data/3.0'
+  include_context 'API client'
 
   describe '#register_station' do
     it 'registers a station', vcr: { cassette_name: 'stations/register_success' } do
@@ -114,7 +114,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       }
 
       expect(client).to receive(:post)
-        .with('measurements', body: [create_params])
+        .with('3.0/measurements', body: [create_params])
         .and_call_original
 
       data = client.create_measurements([create_params])

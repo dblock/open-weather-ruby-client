@@ -1,7 +1,8 @@
 ### 0.2.1 (Next)
 
-* Your contribution here.
 * [#21](https://github.com/dblock/open-weather-ruby-client/pull/21), [#20](https://github.com/dblock/open-weather-ruby-client/pull/20), [#19](https://github.com/dblock/open-weather-ruby-client/pull/19), [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Added support for Stations API - [@wasabigeek](https://github.com/wasabigeek).
+* [#22](https://github.com/dblock/open-weather-ruby-client/pull/23): Removed API version from `Config#endpoint` - [@dblock](https://github.com/dblock).
+* Your contribution here.
 
 ### 0.2.0 (2020/05/17)
 

@@ -8,7 +8,7 @@ describe OpenWeather::Config do
   end
   describe '#defaults' do
     it 'sets endpoint' do
-      expect(OpenWeather.config.endpoint).to eq 'https://api.openweathermap.org/data/2.5'
+      expect(OpenWeather.config.endpoint).to eq 'https://api.openweathermap.org/data'
     end
   end
   describe '#configure' do

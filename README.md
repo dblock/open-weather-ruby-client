@@ -4,7 +4,7 @@ OpenWeather Ruby Client
 [![Gem Version](https://badge.fury.io/rb/open-weather-ruby-client.svg)](https://badge.fury.io/rb/open-weather-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/open-weather-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/open-weather-ruby-client)
 
-A Ruby client for the [OpenWeather API v2.5](https://openweathermap.org/api).
+A Ruby client for the [OpenWeather API v2.5 and v3.0](https://openweathermap.org/api).
 
 Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_open_weather_map), provides a rich first class interface to OpenWeather models, structured timestamps, built-in metrics conversion for temperature and wind speed, offers more consistent error handling, and is implemented with thorough test coverage using actual OpenWeather data.
 
@@ -309,7 +309,7 @@ setting             | description
 api_key             | Required API key.
 lang                | Default language in API responses.
 units               | Default units in API responses.
-endpoint            | Defaults to `https://api.openweathermap.org/data/2.5/`.
+endpoint            | Defaults to `https://api.openweathermap.org/data`.
 user_agent          | User-agent, defaults to _OpenWeather Ruby Client/version_.
 proxy               | Optional HTTP proxy.
 ca_path             | Optional SSL certificates path.
