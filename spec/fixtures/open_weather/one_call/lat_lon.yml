@@ -95,7 +95,10 @@ http_interactions:
         rain","icon":"10d"}],"clouds":99,"rain":8.01,"uvi":10.95},{"dt":1589824800,"sunrise":1589800419,"sunset":1589850710,"temp":{"day":298.65,"min":289.07,"max":300.81,"night":289.49,"eve":297.92,"morn":289.07},"feels_like":{"day":298.14,"night":288.35,"eve":298.74,"morn":288.15},"pressure":1015,"humidity":56,"dew_point":289.47,"wind_speed":3.6,"wind_deg":21,"weather":[{"id":802,"main":"Clouds","description":"scattered
         clouds","icon":"03d"}],"clouds":49,"uvi":10.91},{"dt":1589911200,"sunrise":1589886783,"sunset":1589937154,"temp":{"day":296.27,"min":286.83,"max":298.28,"night":288.9,"eve":297.35,"morn":286.83},"feels_like":{"day":295.57,"night":288.28,"eve":299.19,"morn":286.03},"pressure":1015,"humidity":56,"dew_point":287.09,"wind_speed":2.73,"wind_deg":40,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":0,"uvi":10.01},{"dt":1589997600,"sunrise":1589973148,"sunset":1590023597,"temp":{"day":298.21,"min":287.71,"max":299.71,"night":290.03,"eve":298.59,"morn":287.71},"feels_like":{"day":299.68,"night":289.89,"eve":301.62,"morn":287.74},"pressure":1014,"humidity":61,"dew_point":290.18,"wind_speed":1.3,"wind_deg":71,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":0,"uvi":10.16}]}'
+        sky","icon":"01d"}],"clouds":0,"uvi":10.16}],"alerts": [{"sender_name": "NWS Tulsa (Eastern Oklahoma)","event": "Heat Advisory","start": 1597341600,"end": 1597366800,"description": "...HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO\n8 PM CDT THIS EVENING...\n* WHAT...Heat index values of 105 to 109 degrees expected.\n* WHERE...Creek, Okfuskee, Okmulgee, McIntosh, Pittsburg,\nLatimer, Pushmataha, and Choctaw Counties.\n* WHEN...From 1 PM to 8 PM CDT Thursday.\n* IMPACTS...The combination of hot temperatures and high\nhumidity will combine to create a dangerous situation in which\nheat illnesses are possible."}]}'
     http_version: null
   recorded_at: Thu, 14 May 2020 03:09:08 GMT
 recorded_with: VCR 5.1.0
+
+
+

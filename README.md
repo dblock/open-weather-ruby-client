@@ -167,7 +167,7 @@ data.main.temp # => 285.15
 
 ### One Call
 
-[One Call API](https://openweathermap.org/api/one-call-api) provides current weather, minute forecast for 1 hour, hourly forecast for 48 hours, daily forecast for 7 days, and historical weather data for 5 previous days for any geographical coordinate.
+[One Call API](https://openweathermap.org/api/one-call-api) provides current weather, minute forecast for 1 hour, hourly forecast for 48 hours, daily forecast for 7 days, historical weather data for 5 previous days for any geographical coordinate, and national weather alerts.
 
 See [OpenWeather::Models::OneCall](lib/open_weather/models/one_call) for all available models and properties.
 
@@ -182,6 +182,7 @@ data.current # => OpenWeather::Models::OneCall::CurrentWeather
 data.minutely # => Array[OpenWeather::Models::OneCall::MinutelyWeather]
 data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
 data.daily # => Array[OpenWeather::Models::OneCall::DailyWeather]
+data.alerts # => Array[OpenWeather::Models::OneCall::Alert]
 ```
 
 Exclude minutely and hourly data.

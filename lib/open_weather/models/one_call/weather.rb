@@ -11,6 +11,7 @@ module OpenWeather
         property 'minutely' # minute forecast weather
         property 'hourly' # hourly forecast weather
         property 'daily' # daily forecast weather
+        property 'alerts' # weather alerts for the location
 
         def initialize(args = nil, options = {})
           super args, options
@@ -19,6 +20,7 @@ module OpenWeather
           self.minutely = minutely.map { |i| OpenWeather::Models::OneCall::MinutelyWeather.new(i, options) } if minutely
           self.hourly = hourly.map { |i| OpenWeather::Models::OneCall::HourlyWeather.new(i, options) } if hourly
           self.daily = daily.map { |i| OpenWeather::Models::OneCall::DailyWeather.new(i, options) } if daily
+          self.alerts = alerts.map { |i| OpenWeather::Models::OneCall::Alert.new(i, options) } if alerts
         end
       end
     end

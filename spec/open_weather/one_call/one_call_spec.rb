@@ -7,23 +7,40 @@ RSpec.describe 'one_call' do
 
   it 'lat, lon', vcr: { cassette_name: 'one_call/lat_lon' } do
     data = client.one_call(lat: 33.441792, lon: -94.037689)
+
     expect(data).to be_a OpenWeather::Models::OneCall::Weather
     expect(data.lat).to eq 33.44
     expect(data.lon).to eq(-94.04)
     expect(data.timezone).to eq 'America/Chicago'
     expect(data.current).to be_a OpenWeather::Models::OneCall::CurrentWeather
+
+    # Minutely
     expect(data.minutely).to be_a Array
     expect(data.minutely.size).to eq 61
     expect(data.minutely.first).to be_a OpenWeather::Models::OneCall::MinutelyWeather
     expect(data.minutely.first.precipitation).to eq 0
+
+    # Hourly
     expect(data.hourly).to be_a Array
     expect(data.hourly.size).to eq 48
     expect(data.hourly.first).to be_a OpenWeather::Models::OneCall::HourlyWeather
     expect(data.hourly.first.temp).to eq 295.55
+
+    # Daily
     expect(data.daily).to be_a Array
     expect(data.daily.size).to eq 8
     expect(data.daily.first).to be_a OpenWeather::Models::OneCall::DailyWeather
     expect(data.daily.first.temp.night).to eq 293.67
+
+    # Alerts
+    expect(data.alerts.first).to be_a OpenWeather::Models::OneCall::Alert
+    expect(data.alerts.first.sender_name).to eq 'NWS Tulsa (Eastern Oklahoma)'
+    expect(data.alerts.first.event).to eq 'Heat Advisory'
+    expect(data.alerts.first.start).to be_a Time
+    expect(data.alerts.first.end).to be_a Time
+    expect(data.alerts.first.start.to_s).to eq '2020-08-13 18:00:00 UTC'
+    expect(data.alerts.first.end.to_s).to eq '2020-08-14 01:00:00 UTC'
+    expect(data.alerts.first.description).to include '...HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON'
   end
 
   it 'lat, lon, excluding minutely and hourly', vcr: { cassette_name: 'one_call/lat_lon_exclude_minutely_hourly' } do
