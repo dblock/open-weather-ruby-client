@@ -1,9 +1,0 @@
-language: ruby
-
-cache: bundler
-
-rvm:
-  - 2.6.6
-
-before_script:
-  - bundle exec danger
