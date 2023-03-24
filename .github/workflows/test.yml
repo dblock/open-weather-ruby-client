@@ -9,11 +9,12 @@ jobs:
           - { ruby: "2.7" }
           - { ruby: "3.0" }
           - { ruby: "3.1" }
+          - { ruby: "3.2" }
           - { ruby: ruby-head, ignore: true }
           - { ruby: jruby-head, ignore: true }
     name: Test (ruby=${{ matrix.entry.ruby }})
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:

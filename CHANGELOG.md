@@ -1,15 +1,7 @@
 ### 0.3.0 (Next)
 
-* Removes default values for Faraday’s SSL settings `ca_file` and `ca_path`.
-
-    If you previously relied on `OpenSSL::X509::DEFAULT_CERT_FILE` or `OpenSSL::X509::DEFAULT_CERT_DIR` to set these values you must now do so explicitly. E.g.:
-
-    ```ruby
-    OpenWeather::Client.configure do |config|
-      config.ca_path = OpenSSL::X509::DEFAULT_CERT_DIR
-      config.ca_file = OpenSSL::X509::DEFAULT_CERT_FILE
-    end
-    ```
+* [#30](https://github.com/dblock/open-weather-ruby-client/pull/30): Added support for Ruby 3.2 - [@petergoldstein](https://github.com/petergoldstein).
+* [#27](https://github.com/dblock/open-weather-ruby-client/pull/27): Removed default values for Faraday’s SSL settings ca_file and ca_path - [@sunny](https://github.com/sunny).
 * [#21](https://github.com/dblock/open-weather-ruby-client/pull/21), [#20](https://github.com/dblock/open-weather-ruby-client/pull/20), [#19](https://github.com/dblock/open-weather-ruby-client/pull/19), [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Added support for Stations API - [@wasabigeek](https://github.com/wasabigeek).
 * [#22](https://github.com/dblock/open-weather-ruby-client/pull/23): Removed API version from `Config#endpoint` - [@dblock](https://github.com/dblock).
 * Your contribution here.
