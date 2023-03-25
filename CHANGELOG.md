@@ -1,3 +1,7 @@
+### 0.3.1 (Next)
+
+* Your contribution here.
+
 ### 0.3.0 (2023/03/25)
 
 * [#30](https://github.com/dblock/open-weather-ruby-client/pull/30): Added support for Ruby 3.2 - [@petergoldstein](https://github.com/petergoldstein).
