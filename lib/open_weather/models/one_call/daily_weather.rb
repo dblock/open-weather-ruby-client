@@ -7,6 +7,10 @@ module OpenWeather
         property 'dt', transform_with: ->(v) { Time.at(v).utc } # time of the forecasted data UTC
         property 'sunrise', transform_with: ->(v) { Time.at(v).utc } # sunrise time, UTC
         property 'sunset', transform_with: ->(v) { Time.at(v).utc } # sunset time, UTC
+        property 'moonrise', transform_with: ->(v) { Time.at(v).utc } # moonrise time, UTC
+        property 'moonset', transform_with: ->(v) { Time.at(v).utc } # moonset time, UTC
+        property 'moon_phase' # Moon phase (0-1)
+        property 'summary' # human-readable weather conditions
         property 'temp'
         property 'feels_like'
         property 'pressure' # atmospheric pressure on the sea level, hPa
@@ -17,6 +21,7 @@ module OpenWeather
         property 'wind_deg' # wind direction, degrees (meteorological)
         property 'clouds' # cloudiness, %
         property 'uvi' # UV index
+        property 'pop' # probability of precipitation
         property 'rain' # precipitation volume, mm
         property 'snow' # snow volume, mm
         property 'weather'
