@@ -20,4 +20,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday', '>= 1.0.0'
   s.add_dependency 'faraday_middleware'
   s.add_dependency 'hashie'
+
+  s.add_development_dependency 'danger-changelog', '~> 0.4.2'
+  s.add_development_dependency 'danger-toc', '~> 0.1.3'
+  s.add_development_dependency 'dotenv'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rubocop', '~> 1.48.1'
+  s.add_development_dependency 'vcr'
+  s.add_development_dependency 'webmock'
 end
