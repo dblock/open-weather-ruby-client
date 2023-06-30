@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
   s.summary = 'OpenWeather API Ruby client.'
   s.add_dependency 'activesupport'
-  s.add_dependency 'faraday', '>= 1.0.0'
-  s.add_dependency 'faraday_middleware'
+  s.add_dependency 'faraday', '>= 2.0.1'
+  s.add_dependency 'faraday-multipart'
   s.add_dependency 'hashie'
 
   s.add_development_dependency 'danger-changelog', '~> 0.4.2'
