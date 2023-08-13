@@ -1,3 +1,7 @@
+### 0.4.1 (Next)
+
+* Your contribution here.
+
 ### 0.4.0 (2023/08/13)
 
 * [#33](https://github.com/dblock/open-weather-ruby-client/pull/33): Upgrade Faraday to 2.x - [@dgarwood](https://github.com/dgarwood).
