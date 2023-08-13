@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'faraday'
-require 'faraday_middleware'
+require 'faraday/multipart'
+
 require 'json'
 require 'logger'
 require 'hashie'
