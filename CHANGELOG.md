@@ -2,7 +2,7 @@
 
 * [#21](https://github.com/dblock/open-weather-ruby-client/pull/21), [#20](https://github.com/dblock/open-weather-ruby-client/pull/20), [#19](https://github.com/dblock/open-weather-ruby-client/pull/19), [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Added support for Stations API - [@wasabigeek](https://github.com/wasabigeek).
 * [#22](https://github.com/dblock/open-weather-ruby-client/pull/23): Removed API version from `Config#endpoint` - [@dblock](https://github.com/dblock).
-* Exposed the national weather alerts response in the One Call API [@troya2](https://github.com/troya2)
+* [#25](https://github.com/dblock/open-weather-ruby-client/pull/25): Exposed the national weather alerts response in the One Call API [@troya2](https://github.com/troya2).
 * Your contribution here.
 
 ### 0.2.0 (2020/05/17)
