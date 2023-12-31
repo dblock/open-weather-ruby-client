@@ -9,10 +9,6 @@ module OpenWeather
         property 'start', transform_with: ->(v) { Time.at(v).utc } # UTC
         property 'end', transform_with: ->(v) { Time.at(v).utc } # UTC
         property 'description'
-
-        def initialize(args = nil, options = {})
-          super args, options
-        end
       end
     end
   end
