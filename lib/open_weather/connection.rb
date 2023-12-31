@@ -26,13 +26,12 @@ module OpenWeather
         request_options[:open_timeout] = open_timeout if open_timeout
         options[:request] = request_options if request_options.any?
 
-        ::Faraday::Connection.new(endpoint, options) do |connection|
-          connection.use ::Faraday::Request::Multipart
-          connection.use ::Faraday::Request::UrlEncoded
-          connection.use ::OpenWeather::Response::RaiseError
-          connection.use ::FaradayMiddleware::ParseJson, content_type: /\bjson$/
-          connection.response :logger, logger if logger
-          connection.adapter ::Faraday.default_adapter
+        Faraday.new(endpoint, options) do |f|
+          f.request :multipart
+          f.request :url_encoded
+          f.use ::OpenWeather::Response::RaiseError
+          f.response :json, content_type: /\bjson$/
+          f.response :logger, logger if logger
         end
       end
     end

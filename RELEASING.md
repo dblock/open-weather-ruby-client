@@ -11,7 +11,7 @@ bundle install
 rake
 ```
 
-Check that the last build succeeded in [Travis CI](https://travis-ci.org/dblock/open-weather-ruby-client) for all supported platforms.
+Check that the last build succeeded in GitHub Actions for all supported platforms.
 
 Change "Next" in [CHANGELOG.md](CHANGELOG.md) to the current date.
 

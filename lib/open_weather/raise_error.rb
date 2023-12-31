@@ -2,7 +2,7 @@
 
 module OpenWeather
   module Response
-    class RaiseError < ::Faraday::Response::Middleware
+    class RaiseError < ::Faraday::Response::RaiseError
       def on_complete(env)
         case env[:status]
         when 404

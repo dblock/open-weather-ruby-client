@@ -1,5 +1,15 @@
-### 0.2.1 (Next)
+### 0.4.1 (Next)
 
+* Your contribution here.
+
+### 0.4.0 (2023/08/13)
+
+* [#33](https://github.com/dblock/open-weather-ruby-client/pull/33): Upgrade Faraday to 2.x - [@dgarwood](https://github.com/dgarwood).
+
+### 0.3.0 (2023/03/25)
+
+* [#30](https://github.com/dblock/open-weather-ruby-client/pull/30): Added support for Ruby 3.2 - [@petergoldstein](https://github.com/petergoldstein).
+* [#27](https://github.com/dblock/open-weather-ruby-client/pull/27): Removed default values for Faraday’s SSL settings ca_file and ca_path - [@sunny](https://github.com/sunny).
 * [#21](https://github.com/dblock/open-weather-ruby-client/pull/21), [#20](https://github.com/dblock/open-weather-ruby-client/pull/20), [#19](https://github.com/dblock/open-weather-ruby-client/pull/19), [#18](https://github.com/dblock/open-weather-ruby-client/pull/18): Added support for Stations API - [@wasabigeek](https://github.com/wasabigeek).
 * [#22](https://github.com/dblock/open-weather-ruby-client/pull/23): Removed API version from `Config#endpoint` - [@dblock](https://github.com/dblock).
 * [#25](https://github.com/dblock/open-weather-ruby-client/pull/25): Exposed the national weather alerts response in the One Call API [@troya2](https://github.com/troya2).

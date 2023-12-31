@@ -114,7 +114,7 @@ RSpec.describe OpenWeather::Endpoints::Stations do
       }
 
       expect(client).to receive(:post)
-        .with('3.0/measurements', body: [create_params])
+        .with('3.0/measurements', { body: [create_params] })
         .and_call_original
 
       data = client.create_measurements([create_params])

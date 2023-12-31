@@ -24,8 +24,8 @@ module OpenWeather
       self.endpoint = 'https://api.openweathermap.org/data'
       self.api_key = nil
       self.user_agent = "OpenWeather Ruby Client/#{OpenWeather::VERSION}"
-      self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
-      self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
+      self.ca_path = nil
+      self.ca_file = nil
       self.proxy = nil
       self.logger = nil
       self.timeout = nil
