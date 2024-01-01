@@ -33,14 +33,16 @@ RSpec.describe 'one_call' do
     expect(data.daily.first.temp.night).to eq 286.56
 
     # Alerts
-    expect(data.alerts.first).to be_a OpenWeather::Models::OneCall::Alert
-    expect(data.alerts.first.sender_name).to eq 'NWS Phoenix (Central Arizona and California Desert)'
-    expect(data.alerts.first.event).to eq 'Air Quality Alert'
-    expect(data.alerts.first.start).to be_a Time
-    expect(data.alerts.first.end).to be_a Time
-    expect(data.alerts.first.start.to_s).to eq '2023-12-29 17:31:00 UTC'
-    expect(data.alerts.first.end.to_s).to eq '2024-01-02 04:00:00 UTC'
-    expect(data.alerts.first.description).to include '...PM-2.5 HIGH POLLUTION ADVISORY FOR MARICOPA COUNTY'
+    data.alerts.first.tap do |alert|
+      expect(alert).to be_a OpenWeather::Models::OneCall::Alert
+      expect(alert.sender_name).to eq 'NWS Phoenix (Central Arizona and California Desert)'
+      expect(alert.event).to eq 'Air Quality Alert'
+      expect(alert.start).to be_a Time
+      expect(alert.end).to be_a Time
+      expect(alert.start.to_s).to eq '2023-12-29 17:31:00 UTC'
+      expect(alert.end.to_s).to eq '2024-01-02 04:00:00 UTC'
+      expect(alert.description).to include '...PM-2.5 HIGH POLLUTION ADVISORY FOR MARICOPA COUNTY'
+    end
   end
 
   it 'lat, lon, excluding minutely and hourly', vcr: { cassette_name: 'one_call/lat_lon_exclude_minutely_hourly' } do
