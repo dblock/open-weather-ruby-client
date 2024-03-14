@@ -89,8 +89,13 @@ data.main.temp # => 12
 Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
 
 ```ruby
-client.current_city('New York', 'NY', 'US')
-client.current_weather(city: 'New York', state: 'NY', country: 'US')
+client.current_city('Sydney')                    # Good
+client.current_city('Albany')                    # Good
+client.current_city('Albany, New York', 'US')    # Good
+client.current_city('Albany, NY', 'US')          # Good
+client.current_city('Albany', 'NY', 'US')        # Good
+client.current_city('Albany', 'NY')  # Bad: 2 letter state abbreviation without country will give Faraday::Resource not found
+client.current_weather(city: 'New York', state: 'NY', country: 'US') # Good
 ```
 
 Returns weather by city ID.
