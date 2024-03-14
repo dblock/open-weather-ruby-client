@@ -99,7 +99,7 @@ client.current_city('Albany, New York', 'US')
 client.current_city('Albany, NY', 'US')
 client.current_city('Albany', 'New York', 'US')
 client.current_city('Albany', 'NY', 'US')
-client.current_city('Albany', 'NY')  # Bad: 2 letter state abbreviation without country will give Faraday::Resource not found
+client.current_city('Albany', 'NY')  # 2-letter state abbreviation w/o country will raise Faraday::ResourceNotFound"
 
 client.current_weather(city: 'Albany', state: 'NY', country: 'US') # Good
 ```
