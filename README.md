@@ -87,7 +87,7 @@ data.main.temp # => 12
 ```
 
 Returns weather by city, optional state (in the US) and optional ISO 3166 country code.
-Names that cannot be resolved will cause the API call to fail with Faraday::ResourceNotFound error.
+Names that cannot be resolved will cause the API call to fail with "Faraday::ResourceNotFound" error.
 
 ```ruby
 client.current_city('Sydney')
@@ -99,7 +99,7 @@ client.current_city('Albany, New York', 'US')
 client.current_city('Albany, NY', 'US')
 client.current_city('Albany', 'New York', 'US')
 client.current_city('Albany', 'NY', 'US')
-client.current_city('Albany', 'NY')  # 2-letter state abbreviation w/o country will raise Faraday::ResourceNotFound"
+client.current_city('Albany', 'NY')  # 2-letter state abbreviation w/o country will raise Faraday::ResourceNotFound
 
 client.current_weather(city: 'Albany', state: 'NY', country: 'US')
 ```
