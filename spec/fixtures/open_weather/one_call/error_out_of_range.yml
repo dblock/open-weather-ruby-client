@@ -1,45 +1,46 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.openweathermap.org/data/2.5/onecall/timemachine?appid=api-key&dt=1583902800&lat=33.441792&lon=-94.037689
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json; charset=utf-8
-      User-Agent:
-      - OpenWeather Ruby Client/0.2.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Server:
-      - openresty
-      Date:
-      - Thu, 14 May 2020 03:47:07 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '79'
-      Connection:
-      - keep-alive
-      X-Cache-Key:
-      - "/data/2.5/onecall/timemachine?dt=1583902800&lat=33.44&lon=-94.04"
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST
-    body:
-      encoding: UTF-8
-      string: '{"cod":"400","message":"requested time is out of allowed range of 5
-        days back"}'
-    http_version: null
-  recorded_at: Thu, 14 May 2020 03:47:07 GMT
+  - request:
+      method: get
+      uri: https://api.openweathermap.org/data/3.0/onecall/timemachine?appid=api-key&dt=1583902800&lat=33.441792&lon=-94.037689
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept:
+          - application/json; charset=utf-8
+        User-Agent:
+          - OpenWeather Ruby Client/0.2.0
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 400
+        message: Bad Request
+      headers:
+        Server:
+          - openresty
+        Date:
+          - Thu, 14 May 2020 03:47:07 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Content-Length:
+          - "79"
+        Connection:
+          - keep-alive
+        X-Cache-Key:
+          - "/data/3.0/onecall/timemachine?dt=1583902800&lat=33.44&lon=-94.04"
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, POST
+      body:
+        encoding: UTF-8
+        string:
+          '{"cod":"400","message":"requested time is out of allowed range of 5
+          days back"}'
+      http_version: null
+    recorded_at: Thu, 14 May 2020 03:47:07 GMT
 recorded_with: VCR 5.1.0
