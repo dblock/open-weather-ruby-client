@@ -20,6 +20,7 @@ module OpenWeather
         property 'rain' # precipitation volume, mm
         property 'snow' # snow volume, mm
         property 'weather'
+        property 'summary'
 
         def initialize(args = nil, options = {})
           super args, options
