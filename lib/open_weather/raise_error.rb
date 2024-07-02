@@ -10,7 +10,7 @@ module OpenWeather
         when 407
           # mimic the behavior that we get with proxy requests with HTTPS
           raise Faraday::ConnectionFailed, %(407 "Proxy Authentication Required ")
-        when (400...600).freeze
+        when (400...600)
           raise OpenWeather::Errors::Fault, response_values(env)
         end
       end
