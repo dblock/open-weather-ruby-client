@@ -6,9 +6,9 @@ module OpenWeather
       def hourly(lat, lon = nil, options = {})
         # default to the pro endpoint if not specified
         endpoint = options.delete(:endpoint) || pro_endpoint
-        options = options.merge(endpoint:)
+        options = options.merge(endpoint: endpoint)
 
-        options = lat.is_a?(Hash) ? options.merge(lat) : options.merge(lat:, lon:)
+        options = lat.is_a?(Hash) ? options.merge(lat) : options.merge(lat: lat, lon: lon)
         OpenWeather::Models::Forecast::Hourly.new(get('2.5/forecast/hourly', options), options)
       end
     end
