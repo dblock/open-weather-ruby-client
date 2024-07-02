@@ -4,22 +4,22 @@ module OpenWeather
   module Endpoints
     module Current
       def current_zip(code, country = nil, options = {})
-        options = code.is_a?(Hash) ? options.merge(code) : options.merge(zip: code, country: country)
+        options = code.is_a?(Hash) ? options.merge(code) : options.merge(zip: code, country:)
         current_weather(options)
       end
 
       def current_geo(lat, lon = nil, options = {})
-        options = lat.is_a?(Hash) ? options.merge(lat) : options.merge(lat: lat, lon: lon)
+        options = lat.is_a?(Hash) ? options.merge(lat) : options.merge(lat:, lon:)
         current_weather(options)
       end
 
       def current_city(name, state = nil, country = nil, options = {})
-        options = name.is_a?(Hash) ? options.merge(name) : options.merge(city: name, state: state, country: country)
+        options = name.is_a?(Hash) ? options.merge(name) : options.merge(city: name, state:, country:)
         current_weather(options)
       end
 
       def current_city_id(id, options = {})
-        options = id.is_a?(Hash) ? options.merge(id) : options.merge(id: id)
+        options = id.is_a?(Hash) ? options.merge(id) : options.merge(id:)
         current_weather(options)
       end
 

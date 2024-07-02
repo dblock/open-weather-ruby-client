@@ -60,7 +60,7 @@ RSpec.describe OpenWeather::Models::Station do
         .with(id)
         .and_call_original
 
-      model = OpenWeather::Models::Station.new(id: id)
+      model = OpenWeather::Models::Station.new(id:)
       result = model.delete!
       expect(result).to be_nil
     end

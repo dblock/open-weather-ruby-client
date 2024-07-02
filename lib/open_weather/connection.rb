@@ -19,7 +19,7 @@ module OpenWeather
 
         options[:headers]['User-Agent'] = user_agent if user_agent
         options[:proxy] = proxy if proxy
-        options[:ssl] = { ca_path: ca_path, ca_file: ca_file } if ca_path || ca_file
+        options[:ssl] = { ca_path:, ca_file: } if ca_path || ca_file
 
         request_options = {}
         request_options[:timeout] = timeout if timeout
