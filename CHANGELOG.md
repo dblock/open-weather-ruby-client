@@ -1,3 +1,7 @@
+### 0.5.1 (Next)
+
+* Your contribution here.
+
 ### 0.5.0 (2024/07/03)
 
 * [#25](https://github.com/dblock/open-weather-ruby-client/pull/25): Exposed the national weather alerts response in the One Call API - [@troya2](https://github.com/troya2).
