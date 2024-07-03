@@ -20,6 +20,7 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
   - [One Call](#one-call)
     - [Current and Forecast Weather](#current-and-forecast-weather)
     - [Historical Weather](#historical-weather)
+  - [Hourly Forecast (Pro)](#hourly-forecast-pro)
   - [Stations](#stations)
     - [Register a Station](#register-a-station)
     - [List Stations](#list-stations)
@@ -186,6 +187,7 @@ See [OpenWeather::Models::OneCall](lib/open_weather/models/one_call) for all ava
 
 ```ruby
 data = client.one_call(lat: 33.441792, lon: -94.037689) # => OpenWeather::Models::OneCall::Weather
+
 data.lat # => 33.44
 data.lon # => -94.04
 data.timezone # => 'America/Chicago'
@@ -206,11 +208,34 @@ client.one_call(lat: 33.441792, lon: -94.037689, exclude: ['minutely', 'hourly']
 
 ```ruby
 data = client.one_call(lat: 33.441792, lon: -94.037689, dt: Time.now - 24 * 60 * 60) # => OpenWeather::Models::OneCall::Weather
+
 data.lat # => 33.44
 data.lon # => -94.04
 data.timezone # => 'America/Chicago'
 data.current # => OpenWeather::Models::OneCall::CurrentWeather
 data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
+```
+
+### Hourly Forecast (Pro)
+
+The [Hourly Forecast API](https://openweathermap.org/api/hourly-forecast) provides hourly weather forecast for 4 days.  Note: This API requires a piad api-key from [OpenWeather.org](https://openweathermap.org/full-price#current).
+
+```ruby
+data = client.client.hourly(lat: 33.5312, lon: -111.9426) # => OpenWeather::Models::Forecast::Hourly
+
+data.cnt # => 96 (number of entries)
+data.list.first # => OpenWeather::Models::Forecast::Forecast
+data.list.first.dt # => Time
+data.list.first.main # => OpenWeather::Models::Forecast::Main
+data.list.first.weather # => Array[OpenWeather::Models::Forecast::Weather]
+data.list.first.clouds # => OpenWeather::Models::Forecast::Clouds or nil
+data.list.first.wind # => OpenWeather::Models::Forecast::Wind or nil
+data.list.first.visibility # => 10000
+data.list.first.pop # => 0.1 (probability of precipitation from 0.0 to 1.0 (0% to 100%))
+data.list.first.rain # => OpenWeather::Models::Forecast::Rain or nil
+data.list.first.snow # => OpenWeather::Models::Forecast::Snow or nil
+data.list.first.sys # => OpenWeather::Models::Forecast::Sys or nil
+data.list.first.dt_txt # => String (Time of data forecasted, ISO, UTC)
 ```
 
 ### Stations

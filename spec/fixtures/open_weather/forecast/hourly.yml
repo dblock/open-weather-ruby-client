@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro.openweathermap.org/data/2.5/forecast/hourly?appid=api-key&lat=33.5312&lon=-111.9426
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 02 Jul 2024 20:52:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1845'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/hourly?lat=33.53&lon=-111.94"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"coord":{"lat":44.34,"lon":10.99},"country":"IT","id":3163858,"name":"Zocca","population":4593,"sunrise":1661834187,"sunset":1661882248,"timezone":7200},"cnt":96,"cod":"200","list":[{"clouds":{"all":97},"dt":1661875200,"dt_txt":"2022-08-30 16:00:00","main":{"feels_like":296.02,"grnd_level":933,"humidity":50,"pressure":1015,"sea_level":1015,"temp":296.34,"temp_kf":-1.9,"temp_max":298.24,"temp_min":296.34},"pop":0.32,"rain":{"1h":0.13},"sys":{"pod":"d"},"visibility":10000,"weather":[{"description":"light rain","icon":"10d","id":500,"main":"Rain"}],"wind":{"deg":66,"gust":2.16,"speed":1.06}},{"clouds":{"all":95},"dt":1661878800,"dt_txt":"2022-08-30 17:00:00","main":{"feels_like":296.07,"grnd_level":932,"humidity":53,"pressure":1015,"sea_level":1015,"temp":296.31,"temp_kf":0.11,"temp_max":296.31,"temp_min":296.2},"pop":0.4,"rain":{"1h":0.24},"sys":{"pod":"d"},"visibility":10000,"weather":[{"description":"light rain","icon":"10d","id":500,"main":"Rain"}],"wind":{"deg":103,"gust":3.52,"speed":1.58}},{"clouds":{"all":93},"dt":1661882400,"dt_txt":"2022-08-30 18:00:00","main":{"feels_like":294.74,"grnd_level":931,"humidity":60,"pressure":1015,"sea_level":1015,"temp":294.94,"temp_kf":2.1,"temp_max":294.94,"temp_min":292.84},"pop":0.33,"rain":{"1h":0.2},"sys":{"pod":"n"},"visibility":10000,"weather":[{"description":"light rain","icon":"10n","id":500,"main":"Rain"}],"wind":{"deg":157,"gust":3.39,"speed":1.97}},{"clouds":{"all":100},"dt":1662217200,"dt_txt":"2022-09-03 15:00:00","main":{"feels_like":293.99,"grnd_level":931,"humidity":65,"pressure":1014,"sea_level":1014,"temp":294.14,"temp_kf":0,"temp_max":294.14,"temp_min":294.14},"pop":0.53,"sys":{"pod":"d"},"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":104,"gust":1.92,"speed":0.91}}],"message":0}'
+  recorded_at: Tue, 02 Jul 2024 20:52:29 GMT
+recorded_with: VCR 6.2.0

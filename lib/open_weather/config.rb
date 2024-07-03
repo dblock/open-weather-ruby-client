@@ -6,6 +6,7 @@ module OpenWeather
 
     ATTRIBUTES = %i[
       endpoint
+      pro_endpoint
       api_key
       proxy
       user_agent
@@ -22,6 +23,7 @@ module OpenWeather
 
     def reset
       self.endpoint = 'https://api.openweathermap.org/data'
+      self.pro_endpoint = 'https://pro.openweathermap.org/data'
       self.api_key = nil
       self.user_agent = "OpenWeather Ruby Client/#{OpenWeather::VERSION}"
       self.ca_path = nil

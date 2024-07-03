@@ -5,6 +5,7 @@ module OpenWeather
     include Connection
     include Request
     include Endpoints::Current
+    include Endpoints::Hourly
     include Endpoints::OneCall
     include Endpoints::Stations
 
