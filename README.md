@@ -218,7 +218,7 @@ data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
 
 ### Hourly Forecast (Pro)
 
-The [Hourly Forecast API](https://openweathermap.org/api/hourly-forecast) provides hourly weather forecast for 4 days.  Note: This API requires a piad api-key from [OpenWeather.org](https://openweathermap.org/full-price#current).
+The [Hourly Forecast API](https://openweathermap.org/api/hourly-forecast) provides hourly weather forecast for 4 days.  Note: This API requires a paid api-key from [OpenWeather.org](https://openweathermap.org/full-price#current).
 
 ```ruby
 data = client.client.hourly(lat: 33.5312, lon: -111.9426) # => OpenWeather::Models::Forecast::Hourly
