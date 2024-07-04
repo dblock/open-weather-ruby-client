@@ -1,6 +1,7 @@
 ### 0.5.1 (Next)
 
 * [#40](https://github.com/dblock/open-weather-ruby-client/pull/40): Fixing rubocop violations and improved .rubocop.yml - [@troya2](https://github.com/troya2).
+* [#41](https://github.com/dblock/open-weather-ruby-client/pull/41): Added additional tests for hourly forecast that include all data types - i.e. rain and snow - [@troya2](https://github.com/troya2).
 * [#42](https://github.com/dblock/open-weather-ruby-client/pull/42): Added support for the thirty day forecast in the pro 2.5 API - [@troya2](https://github.com/troya2).
 * Your contribution here.
 
