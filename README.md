@@ -21,6 +21,7 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Current and Forecast Weather](#current-and-forecast-weather)
     - [Historical Weather](#historical-weather)
   - [Hourly Forecast (Pro)](#hourly-forecast-pro)
+  - [30 Day Forecast (Pro)](#30-day-forecast-pro)
   - [Stations](#stations)
     - [Register a Station](#register-a-station)
     - [List Stations](#list-stations)
@@ -221,9 +222,10 @@ data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
 The [Hourly Forecast API](https://openweathermap.org/api/hourly-forecast) provides hourly weather forecast for 4 days.  Note: This API requires a paid api-key from [OpenWeather.org](https://openweathermap.org/full-price#current).
 
 ```ruby
-data = client.client.hourly(lat: 33.5312, lon: -111.9426) # => OpenWeather::Models::Forecast::Hourly
+data = client.client.hourly(lat: 33.5312, lon: -111.9426, appid: "<your api key>") # => OpenWeather::Models::Forecast::Hourly
 
 data.cnt # => 96 (number of entries)
+data.city # => OpenWeather::Models::Forecast::City
 data.list.first # => OpenWeather::Models::Forecast::Forecast
 data.list.first.dt # => Time
 data.list.first.main # => OpenWeather::Models::Forecast::Main
@@ -236,6 +238,31 @@ data.list.first.rain # => OpenWeather::Models::Forecast::Rain or nil
 data.list.first.snow # => OpenWeather::Models::Forecast::Snow or nil
 data.list.first.sys # => OpenWeather::Models::Forecast::Sys or nil
 data.list.first.dt_txt # => String (Time of data forecasted, ISO, UTC)
+```
+
+### 30 Day Forecast (Pro)
+
+The [30 Day Forecast API](https://openweathermap.org/api/forecast30) provides daily weather forecast for 30 days.  Note: This API requires a paid api-key from [OpenWeather.org](https://openweathermap.org/full-price#current).
+
+```ruby
+data = client.client.forecast(lat: 33.5312, lon: -111.9426, appid: "<your api key>") # => OpenWeather::Models::Forecast::ThirtyDay::ThirtyDay
+
+data.cnt # => 30 (number of entries - sometimes this is 29)
+data.city # => OpenWeather::Models::Forecast::City
+data.list.first # => OpenWeather::Models::Forecast::ThirtyDay::Forecast
+data.list.first.dt # => Time - time of data forcasted, UTC
+data.list.first.sunrise # => Time - Sunrise time, UTC
+data.list.first.sunset # => Time - Sunset time, UTC
+data.list.first.temp # => OpenWeather::Models::Forecast::ThirtyDay::Temp
+data.list.first.feels_like # => OpenWeather::Models::OneCall::FeelsLike
+data.list.first.pressure # => int - Atmospheric pressure on the sea level, hPa
+data.list.first.humidity # => int - Humidity, % (e.g. integer 24 means 24% cloudiness)
+data.list.first.weather # => Array[OpenWeather::Models::Weather]
+data.list.first.speed # => double - Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour
+data.list.first.deg # => int - Wind direction, degrees (meteorological)
+data.list.first.clouds # => int - Cloudiness, % (e.g. integer 78 means 78% cloudiness)
+data.list.first.rain # => double or nil - Precipitation volume, mm. Please note that only mm as units of measurement are available for this parameter
+data.list.first.snow # => double or nil - Snow volume, mm. Please note that only mm as units of measurement are available for this parameter
 ```
 
 ### Stations
