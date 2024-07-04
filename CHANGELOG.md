@@ -1,5 +1,6 @@
 ### 0.5.1 (Next)
 
+* [#41](https://github.com/dblock/open-weather-ruby-client/pull/41): Added additional tests for hourly forecast that include all data types - i.e. rain and snow - [@troya2](https://github.com/troya2).
 * Your contribution here.
 
 ### 0.5.0 (2024/07/03)
