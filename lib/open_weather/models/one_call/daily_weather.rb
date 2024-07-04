@@ -11,7 +11,9 @@ module OpenWeather
         property 'feels_like'
         property 'pressure' # atmospheric pressure on the sea level, hPa
         property 'humidity' # humidity, %
-        temperature_property 'dew_point' # atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form
+        # atmospheric temperature (varying according to pressure and humidity)
+        # below which water droplets begin to condense and dew can form
+        temperature_property 'dew_point'
         speed_property 'wind_speed' # wind speed
         speed_property 'wind_gust' # wind gust
         property 'wind_deg' # wind direction, degrees (meteorological)

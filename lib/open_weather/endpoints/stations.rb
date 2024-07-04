@@ -46,7 +46,7 @@ module OpenWeather
       private
 
       def validate_id(id)
-        raise ArgumentError, 'Invalid ID' unless id&.is_a?(String)
+        raise ArgumentError, 'Invalid ID' unless id.is_a?(String)
       end
     end
   end

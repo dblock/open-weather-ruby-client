@@ -11,7 +11,9 @@ module OpenWeather
         temperature_property 'feels_like' # temperature, accounts for the human perception of weather
         property 'pressure' # atmospheric pressure on the sea level, hPa
         property 'humidity' # humidity, %
-        temperature_property 'dew_point' # atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form
+        # atmospheric temperature (varying according to pressure and humidity)
+        # below which water droplets begin to condense and dew can form
+        temperature_property 'dew_point'
         property 'clouds' # cloudiness, %
         property 'uvi' # UV index
         property 'visibility' # average visibility, meters

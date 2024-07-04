@@ -31,7 +31,7 @@ module OpenWeather
           when :metric
             (value.to_f + 273.15).round(2)
           when :imperial
-            ((value.to_f - 32) * 5 / 9 + 273.15).round(2)
+            (((value.to_f - 32) * 5 / 9) + 273.15).round(2)
           else
             value
           end
@@ -55,7 +55,7 @@ module OpenWeather
           when :imperial
             value
           else
-            ((value.to_f - 273.15) * 9 / 5 + 32).round(2)
+            (((value.to_f - 273.15) * 9 / 5) + 32).round(2)
           end
         end
       end
