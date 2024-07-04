@@ -11,6 +11,7 @@ module OpenWeather
         property 'timezone' # shift in seconds from UTC
         property 'sunrise', transform_with: ->(v) { Time.at(v).utc } # Sunrise time, UTC
         property 'sunset', transform_with: ->(v) { Time.at(v).utc } # Sunset time, UTC
+        property 'population' # City population
       end
     end
   end
