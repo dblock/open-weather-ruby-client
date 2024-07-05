@@ -6,7 +6,7 @@ module OpenWeather
   class Logger < ::Logger
     def self.logger
       @logger ||= begin
-        logger = new STDOUT
+        logger = new $stdout
         logger.level = Logger::WARN
         logger
       end

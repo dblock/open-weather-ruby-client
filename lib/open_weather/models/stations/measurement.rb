@@ -5,7 +5,7 @@ module OpenWeather
     module Stations
       class Measurement < Model
         property 'station_id' # The internal ID of the station
-        property 'type' # Type of the aggregated data - minute, hour or day. Specifies the letters m, h or d respectively
+        property 'type' # Type of the aggregated data - minute, hour or day - the letters m, h or d respectively
         property 'date' # Time of measurement
         property 'temp'
         property 'humidity'

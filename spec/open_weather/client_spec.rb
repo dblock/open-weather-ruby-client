@@ -99,7 +99,7 @@ RSpec.describe OpenWeather::Client do
       end
     end
     context 'logger option' do
-      let(:logger) { Logger.new(STDOUT) }
+      let(:logger) { Logger.new($stdout) }
       before do
         OpenWeather::Client.configure do |config|
           config.logger = logger
@@ -110,7 +110,7 @@ RSpec.describe OpenWeather::Client do
           expect(client.logger).to eq logger
         end
         it 'creates a connection with a logger' do
-          expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
+          expect(client.send(:connection).builder.handlers).to include Faraday::Response::Logger
         end
       end
     end

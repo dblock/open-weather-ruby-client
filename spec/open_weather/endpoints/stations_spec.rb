@@ -98,17 +98,17 @@ RSpec.describe OpenWeather::Endpoints::Stations do
   describe '#create_measurements' do
     it 'creates measurements', vcr: { cassette_name: 'stations/create_measurement_success' } do
       create_params = {
-        "station_id": '5ed21a12cca8ce0001f1aef1',
-        "dt": 1479817340,
-        "temperature": 18.7,
-        "wind_speed": 1.2,
-        "wind_gust": 3.4,
-        "pressure": 1021,
-        "humidity": 87,
-        "rain_1h": 2,
-        "clouds": [
+        station_id: '5ed21a12cca8ce0001f1aef1',
+        dt: 1479817340,
+        temperature: 18.7,
+        wind_speed: 1.2,
+        wind_gust: 3.4,
+        pressure: 1021,
+        humidity: 87,
+        rain_1h: 2,
+        clouds: [
           {
-            "condition": 'NSC'
+            condition: 'NSC'
           }
         ]
       }
@@ -124,17 +124,17 @@ RSpec.describe OpenWeather::Endpoints::Stations do
     context 'when station does not exist' do
       it 'raises error', vcr: { cassette_name: 'stations/create_measurement_failed_with_invalid_station' } do
         create_params = {
-          "station_id": 'abcde',
-          "dt": 1479817340,
-          "temperature": 18.7,
-          "wind_speed": 1.2,
-          "wind_gust": 3.4,
-          "pressure": 1021,
-          "humidity": 87,
-          "rain_1h": 2,
-          "clouds": [
+          station_id: 'abcde',
+          dt: 1479817340,
+          temperature: 18.7,
+          wind_speed: 1.2,
+          wind_gust: 3.4,
+          pressure: 1021,
+          humidity: 87,
+          rain_1h: 2,
+          clouds: [
             {
-              "condition": 'NSC'
+              condition: 'NSC'
             }
           ]
         }
@@ -187,7 +187,8 @@ RSpec.describe OpenWeather::Endpoints::Stations do
 
     context 'without required params' do
       it 'raises error' do
-        expect { client.get_measurements(something: 'something') }.to raise_error(ArgumentError, /station_id, type, limit, from, to/)
+        expect { client.get_measurements(something: 'something') }
+          .to raise_error(ArgumentError, /station_id, type, limit, from, to/)
       end
     end
   end

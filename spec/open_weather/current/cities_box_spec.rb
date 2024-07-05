@@ -28,7 +28,9 @@ RSpec.describe 'current_cities_geo_box' do
       expect(data.cnt).to eq 15
     end
     it 'returns cities in a box weather with coordinates' do
-      data = client.current_cities_geo_box(lon_left: 12, lat_bottom: 32, lon_right: 15, lat_top: 37, zoom: 10, cluster: true)
+      data = client.current_cities_geo_box(
+        lon_left: 12, lat_bottom: 32, lon_right: 15, lat_top: 37, zoom: 10, cluster: true
+      )
       expect(data).to be_a OpenWeather::Models::List
       expect(data.cnt).to eq 15
     end

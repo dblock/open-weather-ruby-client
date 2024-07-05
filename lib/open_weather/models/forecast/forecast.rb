@@ -13,7 +13,7 @@ module OpenWeather
         property 'rain'
         property 'snow'
         property 'visibility' # Average visibility, metres. The maximum value of the visibility is 10km
-        property 'pop' # Probability of precipitation. The values of the parameter vary between 0 and 1, where 0 is equal to 0%, 1 is equal to 100%
+        property 'pop' # Probability of precipitation. Varies from 0 and 1, where 0 is equal to 0%, 1 is equal to 100%
         property 'sys'
 
         def initialize(args = nil, options = {})
