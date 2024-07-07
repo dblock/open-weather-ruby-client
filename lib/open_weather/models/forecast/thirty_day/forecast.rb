@@ -16,8 +16,8 @@ module OpenWeather
           property 'speed' # Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour
           property 'deg' # Wind direction, degrees (meteorological)
           property 'clouds' # Cloudiness, % (e.g. integer 78 means 78% cloudiness)
-          property 'rain' # Precipitation volume, mm. Please note that only mm as units of measurement are available for this parameter
-          property 'snow' # Snow volume, mm. Please note that only mm as units of measurement are available for this parameter
+          property 'rain' # Precipitation volume, mm. Unit will only be in mm
+          property 'snow' # Snow volume, mm. Unit will only be in mm
 
           def initialize(args = nil, options = {})
             super args, options

@@ -5,12 +5,12 @@ module OpenWeather
     module Forecast
       module ThirtyDay
         class Temp < Model
-          temperature_property 'day' # Day temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
-          temperature_property 'min' # Min daily temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
-          temperature_property 'max' # Max daily temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
-          temperature_property 'night' # Night temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
-          temperature_property 'eve' # Evening temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
-          temperature_property 'morn' # Morning temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'day' # Day temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'min' # Min daily temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'max' # Max daily temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'night' # Night temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'eve' # Evening temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
+          temperature_property 'morn' # Morning temperature. Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit
         end
       end
     end
