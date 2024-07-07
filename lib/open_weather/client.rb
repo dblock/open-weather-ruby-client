@@ -6,6 +6,7 @@ module OpenWeather
     include Request
     include Endpoints::Current
     include Endpoints::Hourly
+    include Endpoints::ThirtyDayForecast
     include Endpoints::OneCall
     include Endpoints::Stations
 
