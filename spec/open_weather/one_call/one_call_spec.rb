@@ -79,6 +79,21 @@ RSpec.describe 'one_call' do
     expect(data.daily).to be nil
   end
 
+  it 'base plan', vcr: { cassette_name: 'one_call/base_plan' } do
+    data = client.one_call(lat: 33.441792, lon: -94.037689, dt: Time.at(1589173200))
+    expect(data).to be_a OpenWeather::Models::OneCall::Weather
+    expect(data.lat).to eq 33.4418
+    expect(data.lon).to eq(-94.0377)
+    expect(data.timezone).to eq 'America/Chicago'
+    expect(data.data).to be_a Array
+    expect(data.data.size).to eq 1
+    expect(data.data.first).to be_a OpenWeather::Models::OneCall::CurrentWeather
+    expect(data.data.first.temp).to eq 289.88
+    expect(data.data.first.temp_c).to eq 16.73
+    expect(data.data.first.temp_k).to eq 289.88
+    expect(data.data.first.temp_f).to eq 62.11
+  end
+
   it 'raises an out of range error', vcr: { cassette_name: 'one_call/error_out_of_range' } do
     expect do
       client.one_call(
