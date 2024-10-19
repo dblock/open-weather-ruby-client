@@ -1,3 +1,7 @@
+### 0.6.1 (Next)
+
+* Your contribution here.
+
 ### 0.6.0 (2024/10/19)
 
 * [#40](https://github.com/dblock/open-weather-ruby-client/pull/40): Fixing rubocop violations and improved .rubocop.yml - [@troya2](https://github.com/troya2).
