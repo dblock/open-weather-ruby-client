@@ -193,6 +193,7 @@ data.lat # => 33.44
 data.lon # => -94.04
 data.timezone # => 'America/Chicago'
 data.current # => OpenWeather::Models::OneCall::CurrentWeather
+data.data # => Array]OpenWeather::Models::OneCall::CurrentWeather] (on base plan)
 data.minutely # => Array[OpenWeather::Models::OneCall::MinutelyWeather]
 data.hourly # => Array[OpenWeather::Models::OneCall::HourlyWeather]
 data.daily # => Array[OpenWeather::Models::OneCall::DailyWeather]
@@ -368,19 +369,19 @@ end
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-api_key             | Required API key.
-lang                | Default language in API responses.
-units               | Default units in API responses.
-endpoint            | Defaults to `https://api.openweathermap.org/data`.
-user_agent          | User-agent, defaults to _OpenWeather Ruby Client/version_.
-proxy               | Optional HTTP proxy.
-ca_path             | Optional SSL certificates path.
-ca_file             | Optional SSL certificates file.
-logger              | Optional `Logger` instance that logs HTTP requests.
-timeout             | Optional open/read timeout in seconds.
-open_timeout        | Optional connection open timeout in seconds.
+| setting      | description                                                |
+| ------------ | ---------------------------------------------------------- |
+| api_key      | Required API key.                                          |
+| lang         | Default language in API responses.                         |
+| units        | Default units in API responses.                            |
+| endpoint     | Defaults to `https://api.openweathermap.org/data`.         |
+| user_agent   | User-agent, defaults to _OpenWeather Ruby Client/version_. |
+| proxy        | Optional HTTP proxy.                                       |
+| ca_path      | Optional SSL certificates path.                            |
+| ca_file      | Optional SSL certificates file.                            |
+| logger       | Optional `Logger` instance that logs HTTP requests.        |
+| timeout      | Optional open/read timeout in seconds.                     |
+| open_timeout | Optional connection open timeout in seconds.               |
 
 ### Units
 

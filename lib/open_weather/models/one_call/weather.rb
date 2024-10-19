@@ -12,11 +12,13 @@ module OpenWeather
         property 'hourly' # hourly forecast weather
         property 'daily' # daily forecast weather
         property 'alerts' # weather alerts for the location
+        property 'data' # weather data
 
         def initialize(args = nil, options = {})
           super args, options
 
           self.current = OpenWeather::Models::OneCall::CurrentWeather.new(current, options) if current
+          self.data = data.map { |i| OpenWeather::Models::OneCall::CurrentWeather.new(i, options) } if data
           self.minutely = minutely.map { |i| OpenWeather::Models::OneCall::MinutelyWeather.new(i, options) } if minutely
           self.hourly = hourly.map { |i| OpenWeather::Models::OneCall::HourlyWeather.new(i, options) } if hourly
           self.daily = daily.map { |i| OpenWeather::Models::OneCall::DailyWeather.new(i, options) } if daily
