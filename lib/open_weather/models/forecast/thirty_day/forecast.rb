@@ -8,7 +8,7 @@ module OpenWeather
           property 'dt', transform_with: ->(v) { Time.at(v).utc } # time of data forcasted, UTC
           property 'sunrise', transform_with: ->(v) { Time.at(v).utc } # Sunrise time, UTC
           property 'sunset', transform_with: ->(v) { Time.at(v).utc } # Sunset time, UTC
-          property 'temp' # Array of OpenWeather::Models::Forecast::ThityDay::Temp
+          property 'temp' # Array of OpenWeather::Models::Forecast::ThirtyDay::Temp
           property 'feels_like' # OpenWeather::Models::OneCall::FeelsLike
           property 'pressure' # Atmospheric pressure on the sea level, hPa
           property 'humidity' # Humidity, % (e.g. integer 24 means 24% cloudiness)
