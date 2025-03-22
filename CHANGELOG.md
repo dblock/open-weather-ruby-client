@@ -1,4 +1,4 @@
-### 0.6.1 (Next)
+### 0.7.0 (Next)
 
 * Your contribution here.
 * [#46](https://github.com/dblock/open-weather-ruby-client/pull/46): Added support for the five day forecast API - [@mgm702](https://github.com/mgm702).
