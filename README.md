@@ -22,6 +22,7 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Historical Weather](#historical-weather)
   - [Hourly Forecast (Pro)](#hourly-forecast-pro)
   - [30 Day Forecast (Pro)](#30-day-forecast-pro)
+  - [5 Day Forecast](#5-day-forecast)
   - [Stations](#stations)
     - [Register a Station](#register-a-station)
     - [List Stations](#list-stations)
@@ -264,6 +265,28 @@ data.list.first.deg # => int - Wind direction, degrees (meteorological)
 data.list.first.clouds # => int - Cloudiness, % (e.g. integer 78 means 78% cloudiness)
 data.list.first.rain # => double or nil - Precipitation volume, mm. Please note that only mm as units of measurement are available for this parameter
 data.list.first.snow # => double or nil - Snow volume, mm. Please note that only mm as units of measurement are available for this parameter
+```
+
+### 5 Day Forecast
+
+The [5 Day Forecast API](https://openweathermap.org/forecast5) provides weather forecast for 5 days with data every 3 hours by geographic coordinates.
+
+```ruby
+data = client.client.five_day_forecast(lat: 33.5312, lon: -111.9426, appid: "<your api key>") # => OpenWeather::Models::Forecast::FiveDay
+
+data.cnt # => 40 (number of entries)
+data.list.first # => OpenWeather::Models::Forecast::FiveDay::Forecast
+data.list.first.dt # => Time
+data.list.first.main # => OpenWeather::Models::Main
+data.list.first.weather # => Array[OpenWeather::Models::Weather]
+data.list.first.clouds # => OpenWeather::Models::Clouds or nil
+data.list.first.wind # => OpenWeather::Models::Wind or nil
+data.list.first.visibility # => 10000
+data.list.first.pop # => 0.1 (probability of precipitation from 0.0 to 1.0 (0% to 100%))
+data.list.first.rain # => OpenWeather::Models::Rain or nil
+data.list.first.snow # => OpenWeather::Models::Snow or nil
+data.list.first.sys # => OpenWeather::Models::Sys or nil
+data.list.first.dt_txt # => String (Time of data forecasted, ISO, UTC)
 ```
 
 ### Stations
