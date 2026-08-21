@@ -4,6 +4,7 @@
 * [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Upgrade danger-changelog to 0.8.0 and danger-toc to 0.2.0 - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * Your contribution here.
 * [#46](https://github.com/dblock/open-weather-ruby-client/pull/46): Added support for the five day forecast API - [@mgm702](https://github.com/mgm702).
+* [#48](https://github.com/dblock/open-weather-ruby-client/pull/48): Modernized CI: dropped EOL Ruby 2.7/3.0, added Ruby 3.3/3.4 to the test matrix, bumped `actions/checkout` to v7, and fixed the Tests badge link in the README - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 
 ### 0.6.0 (2024/10/19)
 
