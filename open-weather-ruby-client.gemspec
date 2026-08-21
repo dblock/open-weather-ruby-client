@@ -21,8 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday-multipart'
   s.add_dependency 'hashie'
 
-  s.add_development_dependency 'danger-changelog', '~> 0.4.2'
-  s.add_development_dependency 'danger-toc', '~> 0.1.3'
+  s.add_development_dependency 'danger-changelog', '~> 0.8.0'
+  s.add_development_dependency 'danger-pr-comment'
+  s.add_development_dependency 'danger-toc', '~> 0.2.0'
   s.add_development_dependency 'dotenv'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'rake'

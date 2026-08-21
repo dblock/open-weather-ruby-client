@@ -1,5 +1,7 @@
 ### 0.7.0 (Next)
 
+* [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
+* [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Upgrade danger-changelog to 0.8.0 and danger-toc to 0.2.0 - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * Your contribution here.
 * [#46](https://github.com/dblock/open-weather-ruby-client/pull/46): Added support for the five day forecast API - [@mgm702](https://github.com/mgm702).
 
