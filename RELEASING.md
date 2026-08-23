@@ -13,6 +13,8 @@ rake
 
 Check that the last build succeeded in GitHub Actions for all supported platforms.
 
+If `bundle install` or `rake release` fails with a `DidYouMean::SPELL_CHECKERS` error, your local Bundler version is too old for your Ruby version. Update it, e.g. `gem install bundler -v '~> 2.7'`.
+
 Change "Next" in [CHANGELOG.md](CHANGELOG.md) to the current date.
 
 ```
