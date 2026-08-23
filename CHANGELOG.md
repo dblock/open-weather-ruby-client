@@ -1,3 +1,7 @@
+### 0.7.1 (Next)
+
+* Your contribution here.
+
 ### 0.7.0 (8/23/2026)
 
 * [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
