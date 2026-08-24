@@ -1,5 +1,6 @@
 ### 0.7.1 (Next)
 
+* [#50](https://github.com/dblock/open-weather-ruby-client/pull/50): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.7.0 (8/23/2026)
