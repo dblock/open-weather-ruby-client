@@ -1,8 +1,9 @@
 ### 0.7.1 (Next)
 
+* [#50](https://github.com/dblock/open-weather-ruby-client/pull/50): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
-### 0.7.0 (8/23/2026)
+### 0.7.0 (2026/8/23)
 
 * [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * [#49](https://github.com/dblock/open-weather-ruby-client/pull/49): Upgrade danger-changelog to 0.8.0 and danger-toc to 0.2.0 - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
