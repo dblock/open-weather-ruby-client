@@ -134,4 +134,14 @@ RSpec.describe OpenWeather::Client do
       end
     end
   end
+  context '.configure' do
+    it 'returns the Config class when called without a block' do
+      expect(OpenWeather::Client.configure).to eq OpenWeather::Config
+    end
+  end
+  context '.config' do
+    it 'returns the Config class' do
+      expect(OpenWeather::Client.config).to eq OpenWeather::Config
+    end
+  end
 end
