@@ -3,6 +3,7 @@ OpenWeather Ruby Client
 
 [![Gem Version](https://badge.fury.io/rb/open-weather-ruby-client.svg)](https://badge.fury.io/rb/open-weather-ruby-client)
 [![Tests Status](https://github.com/dblock/open-weather-ruby-client/actions/workflows/test.yml/badge.svg)](https://github.com/dblock/open-weather-ruby-client/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/dblock/open-weather-ruby-client/badge.svg?branch=master)](https://coveralls.io/github/dblock/open-weather-ruby-client?branch=master)
 
 A Ruby client for the [OpenWeather API v2.5 and v3.0](https://openweathermap.org/api).
 
