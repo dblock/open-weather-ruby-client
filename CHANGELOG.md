@@ -2,6 +2,7 @@
 
 * [#50](https://github.com/dblock/open-weather-ruby-client/pull/50): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
 * [#51](https://github.com/dblock/open-weather-ruby-client/pull/51): Adds test coverage reporting with [coveralls.io](https://coveralls.io) - [@dblock](https://github.com/dblock).
+* [#53](https://github.com/dblock/open-weather-ruby-client/pull/53): Fixed coverage reporting to Coveralls not running on pull requests by switching from `coveralls_reborn`/`COVERALLS_REPO_TOKEN` to `coverallsapp/github-action`/`GITHUB_TOKEN` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.7.0 (2026/8/23)
