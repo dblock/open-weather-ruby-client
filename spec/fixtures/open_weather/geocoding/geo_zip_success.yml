@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/zip?appid=api-key&zip=94040,US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Aug 2026 23:19:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '82'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=94040%2cus"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"zip":"94040","name":"Mountain View","lat":37.3855,"lon":-122.088,"country":"US"}'
+  recorded_at: Thu, 27 Aug 2026 23:19:26 GMT
+recorded_with: VCR 6.4.0

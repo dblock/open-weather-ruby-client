@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/reverse?appid=api-key&lat=51.5073219&lon=-0.1276474
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Aug 2026 23:19:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '518'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/reverse?lat=51.51&lon=-0.13"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '[{"name":"City of Westminster","local_names":{"he":"וסטמינסטר","ru":"Вестминстер","be":"Вэстмінстэр","mk":"Град
+        Вестминстер","bn":"সিটি অফ ওয়েস্টমিনস্টার","ko":"시티오브웨스트민스터","sr":"Вестминстер","hi":"सिटी
+        ऑफ वेस्टमिंस्टर","fr":"Cité de Westminster","cy":"San Steffan","en":"City
+        of Westminster"},"lat":51.4973206,"lon":-0.137149,"country":"GB","state":"England"}]'
+  recorded_at: Thu, 27 Aug 2026 23:19:26 GMT
+recorded_with: VCR 6.4.0
