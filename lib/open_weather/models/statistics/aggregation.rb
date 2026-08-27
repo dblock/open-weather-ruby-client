@@ -21,8 +21,10 @@ module OpenWeather
           self.pressure = OpenWeather::Models::Statistics::Pressure.new(pressure, options) if pressure
           self.humidity = OpenWeather::Models::Statistics::Humidity.new(humidity, options) if humidity
           self.wind = OpenWeather::Models::Statistics::Wind.new(wind, options) if wind
-          self.precipitation = OpenWeather::Models::Statistics::Precipitation.new(precipitation, options) if precipitation
           self.clouds = OpenWeather::Models::Statistics::Clouds.new(clouds, options) if clouds
+          return unless precipitation
+
+          self.precipitation = OpenWeather::Models::Statistics::Precipitation.new(precipitation, options)
         end
       end
     end
