@@ -10,6 +10,7 @@ module OpenWeather
     include Endpoints::FiveDayForecast
     include Endpoints::OneCall
     include Endpoints::Stations
+    include Endpoints::Geocoding
 
     attr_accessor(*Config::ATTRIBUTES)
 

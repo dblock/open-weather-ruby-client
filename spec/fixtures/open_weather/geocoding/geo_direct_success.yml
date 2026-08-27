@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/direct?appid=api-key&q=London,GB
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Aug 2026 23:19:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2576'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/direct?q=london%2cgb"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '[{"name":"London","local_names":{"io":"London","ga":"Londain","ce":"Лондон","an":"Londres","tk":"London","bi":"London","co":"Londra","gu":"લંડન","fo":"London","su":"London","lv":"Londona","qu":"London","av":"Лондон","sr":"Лондон","lt":"Londonas","la":"Londinium","ab":"Лондан","kw":"Loundres","os":"Лондон","hu":"London","pl":"Londyn","eu":"Londres","am":"ለንደን","cv":"Лондон","ml":"ലണ്ടൻ","or":"ଲଣ୍ଡନ","ee":"London","th":"ลอนดอน","el":"Λονδίνο","tl":"Londres","fa":"لندن","ky":"Лондон","ro":"Londra","ny":"London","fy":"Londen","bo":"ལོན་ཊོན།","ms":"London","sw":"London","tr":"Londra","ha":"Landan","ug":"لوندۇن","ascii":"London","ku":"London","de":"London","sq":"Londra","ja":"ロンドン","pt":"Londres","sm":"Lonetona","af":"Londen","so":"London","kl":"London","si":"ලන්ඩන්","yi":"לאנדאן","kn":"ಲಂಡನ್","ne":"लन्डन","sk":"Londýn","ta":"இலண்டன்","ko":"런던","ru":"Лондон","ay":"London","bh":"लंदन","mr":"लंडन","fr":"Londres","ps":"لندن","gl":"Londres","wa":"Londe","nn":"London","ln":"Londoni","rm":"Londra","be":"Лондан","na":"London","li":"Londe","hi":"लंदन","zh":"倫敦","fj":"Lodoni","uk":"Лондон","ig":"London","et":"London","lb":"London","ff":"London","zu":"ILondon","da":"London","jv":"London","mg":"Lôndôna","feature_name":"London","sc":"Londra","te":"లండన్","oc":"Londres","ba":"Лондон","tg":"Лондон","ht":"Lonn","lo":"ລອນດອນ","bg":"Лондон","fi":"Lontoo","kv":"Лондон","sa":"लन्डन्","it":"Londra","gn":"Londye","om":"Landan","wo":"Londar","sd":"لنڊن","pa":"ਲੰਡਨ","cs":"Londýn","km":"ឡុងដ៍","es":"Londres","tt":"Лондон","bs":"London","eo":"Londono","sv":"London","nl":"Londen","hy":"Լոնդոն","cy":"Llundain","ur":"لندن","mn":"Лондон","bm":"London","az":"London","to":"Lonitoni","id":"London","no":"London","ka":"ლონდონი","mt":"Londra","ca":"Londres","gd":"Lunnainn","sl":"London","ar":"لندن","br":"Londrez","tw":"London","st":"London","bn":"লন্ডন","mi":"Rānana","hr":"London","se":"London","sn":"London","vi":"Luân
+        Đôn","en":"London","yo":"Lọndọnu","is":"Lundúnir","mk":"Лондон","sh":"London","gv":"Lunnin","cu":"Лондонъ","my":"လန်ဒန်မြို့","he":"לונדון","uz":"London","kk":"Лондон"},"lat":51.5074456,"lon":-0.1277653,"country":"GB","state":"England"}]'
+  recorded_at: Thu, 27 Aug 2026 23:19:25 GMT
+recorded_with: VCR 6.4.0

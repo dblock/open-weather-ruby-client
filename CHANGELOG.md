@@ -1,5 +1,6 @@
-### 0.7.1 (Next)
+### 0.8.0 (Next)
 
+* [#54](https://github.com/dblock/open-weather-ruby-client/pull/54): Add support for the Geocoding API (`geo_direct`, `geo_reverse`, `geo_zip`) - [@dblock](https://github.com/dblock).
 * [#50](https://github.com/dblock/open-weather-ruby-client/pull/50): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
 * [#51](https://github.com/dblock/open-weather-ruby-client/pull/51): Adds test coverage reporting with [coveralls.io](https://coveralls.io) - [@dblock](https://github.com/dblock).
 * [#53](https://github.com/dblock/open-weather-ruby-client/pull/53): Fixed coverage reporting to Coveralls not running on pull requests by switching from `coveralls_reborn`/`COVERALLS_REPO_TOKEN` to `coverallsapp/github-action`/`GITHUB_TOKEN` - [@dblock](https://github.com/dblock).

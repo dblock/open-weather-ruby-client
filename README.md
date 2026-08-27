@@ -32,6 +32,10 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Delete Station](#delete-station)
     - [Create Measurements](#create-measurements)
     - [Get Measurements](#get-measurements)
+  - [Geocoding](#geocoding)
+    - [Direct Geocoding](#direct-geocoding)
+    - [Reverse Geocoding](#reverse-geocoding)
+    - [Zip Code Geocoding](#zip-code-geocoding)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -378,6 +382,43 @@ client.get_measurements(
   from: 1469817340,
   to: 1591620047
 ) # => Array[OpenWeather::Models::Stations::Measurement]
+```
+
+### Geocoding
+
+The [Geocoding API](https://openweathermap.org/api/geocoding-api) converts city names and zip/post codes to geographical coordinates, and vice versa.
+
+#### Direct Geocoding
+
+To get geographical coordinates for a city name, call the client method:
+```ruby
+client.geo_direct('London', nil, 'GB') # => Array[OpenWeather::Models::GeoLocation]
+```
+Or pass a hash of options.
+```ruby
+client.geo_direct(city: 'London', state: nil, country: 'GB', limit: 5) # => Array[OpenWeather::Models::GeoLocation]
+```
+
+#### Reverse Geocoding
+
+To get a location name for geographical coordinates, call the client method:
+```ruby
+client.geo_reverse(51.5074456, -0.1277653) # => Array[OpenWeather::Models::GeoLocation]
+```
+Or pass a hash of options.
+```ruby
+client.geo_reverse(lat: 51.5074456, lon: -0.1277653, limit: 5) # => Array[OpenWeather::Models::GeoLocation]
+```
+
+#### Zip Code Geocoding
+
+To get geographical coordinates for a zip/post code, call the client method:
+```ruby
+client.geo_zip('94040', 'US') # => OpenWeather::Models::GeoLocationZip
+```
+Or pass a hash of options.
+```ruby
+client.geo_zip(zip: '94040', country: 'US') # => OpenWeather::Models::GeoLocationZip
 ```
 
 ## Configuration
