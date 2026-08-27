@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://history.openweathermap.org/data/2.5/aggregated/month?appid=api-key&lat=35&lon=139&month=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"cod":200,"city_id":5400075,"calctime":0.417010027,"result":{"month":2,"temp":{"record_min":269.85,"record_max":296.05,"average_min":274.17,"average_max":291.97,"median":283.71,"mean":283.69,"p25":281.05,"p75":286.18,"st_dev":3.98,"num":3953},"pressure":{"min":988,"max":1036,"median":1020,"mean":1019.34,"p25":1016,"p75":1024,"st_dev":6.94,"num":3942},"humidity":{"min":17,"max":100,"median":81,"mean":77.38,"p25":67,"p75":89,"st_dev":16.33,"num":3669},"wind":{"min":0,"max":17,"median":1,"mean":2.06,"p25":1,"p75":3,"st_dev":1.96,"num":3953},"precipitation":{"min":0,"max":3,"median":0,"mean":0.16,"p25":0,"p75":0,"st_dev":0.46,"num":3953},"clouds":{"min":0,"max":90,"median":12,"mean":37.4,"p25":1,"p75":90,"st_dev":39.94,"num":3953},"sunshine_hours":102.17}}'
+  recorded_at: Tue, 02 Jun 2020 13:56:23 GMT
+recorded_with: VCR 6.0.0
