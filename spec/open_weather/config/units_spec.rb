@@ -14,7 +14,7 @@ RSpec.describe 'config.metric' do
       expect(subject.id).to eq 524901
       expect(subject.name).to eq 'Москва'
     end
-    it 'converts temperature from celcius' do
+    it 'converts temperature from celsius' do
       expect(subject.main.temp).to eq 12
       expect(subject.main.temp_c).to eq 12
       expect(subject.main.temp_k).to eq 285.15
@@ -35,7 +35,7 @@ RSpec.describe 'config.metric' do
       expect(subject.id).to eq 524901
       expect(subject.name).to eq 'Москва'
     end
-    it 'converts temperature from farenheit' do
+    it 'converts temperature from fahrenheit' do
       expect(subject.main.temp).to eq 53.6
       expect(subject.main.temp_c).to eq 12
       expect(subject.main.temp_k).to eq 285.15
@@ -63,7 +63,7 @@ RSpec.describe 'config.metric' do
         expect(subject.id).to eq 524901
         expect(subject.name).to eq 'Москва'
       end
-      it 'converts temperature from celcius' do
+      it 'converts temperature from celsius' do
         expect(subject.main.temp).to eq 12
         expect(subject.main.temp_c).to eq 12
         expect(subject.main.temp_k).to eq 285.15
