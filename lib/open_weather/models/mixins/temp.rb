@@ -15,11 +15,11 @@ module OpenWeather
             end
 
             define_method "#{field}_c" do
-              to_celcius(send(field))
+              to_celsius(send(field))
             end
 
             define_method "#{field}_f" do
-              to_farenheit(send(field))
+              to_fahrenheit(send(field))
             end
           end
         end
@@ -37,7 +37,7 @@ module OpenWeather
           end
         end
 
-        def to_celcius(value)
+        def to_celsius(value)
           case units
           when :metric
             value
@@ -48,7 +48,7 @@ module OpenWeather
           end
         end
 
-        def to_farenheit(value)
+        def to_fahrenheit(value)
           case units
           when :metric
             ((value.to_f * 9 / 5) + 32).round(2)

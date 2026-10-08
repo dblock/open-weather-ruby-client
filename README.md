@@ -80,8 +80,8 @@ data.main.humidity # => 81
 data.main.pressure # => 1005
 data.main.temp # => 282.57
 data.main.temp_max # => 283.15, degrees Kelvin
-data.main.temp_max_c # => 10, degrees Celcius
-data.main.temp_max_f # => 50.0, degrees Farenheit
+data.main.temp_max_c # => 10, degrees Celsius
+data.main.temp_max_f # => 50.0, degrees Fahrenheit
 data.main.temp_min # => 281.48
 ```
 
@@ -455,7 +455,7 @@ The OpenWeather API returns responses in `standard`, `metric`, and `imperial` un
 ```ruby
 data = client.weather(id: 2643743, units: 'metric')
 data.name # => 'London'
-data.main.temp # => 12, degrees Celcius
+data.main.temp # => 12, degrees Celsius
 ```
 
 ```ruby
@@ -465,20 +465,20 @@ end
 
 data = client.weather(id: 2643743)
 data.name # => 'London'
-data.main.temp # => 12, degrees Celcius
+data.main.temp # => 12, degrees Celsius
 ```
 
 #### Converting Temperature
 
-APIs that return temperature support conversion between default, metric and imperial units, regardless of what units were requested. The following example requests current weather in metric units in Moscow. Use `_k` for Kelvin, `_c` for Celcius and `_f` for Farenheit.
+APIs that return temperature support conversion between default, metric and imperial units, regardless of what units were requested. The following example requests current weather in metric units in Moscow. Use `_k` for Kelvin, `_c` for Celsius and `_f` for Fahrenheit.
 
 ```ruby
 data = client.current_weather(city: 'Moscow', units: 'metric') # => OpenWeather::Models::City::Weather
 
-data.main.temp_max # => 12, degrees Celcius, metric as requested
-data.main.temp_max_c # => 12, degrees Celcius
+data.main.temp_max # => 12, degrees Celsius, metric as requested
+data.main.temp_max_c # => 12, degrees Celsius
 data.main.temp_max_k # => 285.15, degrees Kelvin
-data.main.temp_max_f # => 53.6, degrees Farenheit
+data.main.temp_max_f # => 53.6, degrees Fahrenheit
 ```
 
 #### Converting Wind Speed
