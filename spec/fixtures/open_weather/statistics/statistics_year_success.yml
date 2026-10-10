@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://history.openweathermap.org/data/2.5/aggregated/year?appid=api-key&lat=35&lon=139
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"cod":200,"city_id":5400075,"calctime":3.105838634,"result":[{"month":1,"day":1,"temp":{"record_min":274.44,"record_max":290.45,"average_min":276.79,"average_max":286.5,"median":281.26,"mean":281.29,"p25":278.57,"p75":283.83,"st_dev":3.69,"num":136},"pressure":{"min":1014,"max":1026,"median":1021,"mean":1020.5,"p25":1019,"p75":1023,"st_dev":3.25,"num":135},"humidity":{"min":23,"max":100,"median":70,"mean":65.88,"p25":47,"p75":82,"st_dev":20.63,"num":133},"wind":{"min":0,"max":10,"median":1,"mean":2.36,"p25":1,"p75":3,"st_dev":2.3,"num":136},"precipitation":{"min":0,"max":0.3,"median":0,"mean":0.01,"p25":0,"p75":0,"st_dev":0.04,"num":136},"clouds":{"min":0,"max":90,"median":1,"mean":20.18,"p25":1,"p75":40,"st_dev":31.91,"num":136}},{"month":1,"day":2,"temp":{"record_min":273.15,"record_max":289.82,"average_min":276.12,"average_max":285.93,"median":280.71,"mean":280.68,"p25":278.02,"p75":283.19,"st_dev":3.61,"num":135},"pressure":{"min":1012,"max":1028,"median":1020,"mean":1019.87,"p25":1017,"p75":1022,"st_dev":3.41,"num":134},"humidity":{"min":25,"max":100,"median":71,"mean":66.42,"p25":48,"p75":83,"st_dev":19.87,"num":132},"wind":{"min":0,"max":11,"median":1,"mean":2.41,"p25":1,"p75":3,"st_dev":2.28,"num":135},"precipitation":{"min":0,"max":0.4,"median":0,"mean":0.02,"p25":0,"p75":0,"st_dev":0.05,"num":135},"clouds":{"min":0,"max":90,"median":2,"mean":21.03,"p25":1,"p75":42,"st_dev":32.14,"num":135}}]}'
+  recorded_at: Tue, 02 Jun 2020 13:56:23 GMT
+recorded_with: VCR 6.0.0

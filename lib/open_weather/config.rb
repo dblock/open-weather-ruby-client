@@ -8,6 +8,7 @@ module OpenWeather
       endpoint
       pro_endpoint
       geo_endpoint
+      history_endpoint
       api_key
       proxy
       user_agent
@@ -26,6 +27,7 @@ module OpenWeather
       self.endpoint = 'https://api.openweathermap.org/data'
       self.pro_endpoint = 'https://pro.openweathermap.org/data'
       self.geo_endpoint = 'https://api.openweathermap.org/geo'
+      self.history_endpoint = 'https://history.openweathermap.org/data'
       self.api_key = nil
       self.user_agent = "OpenWeather Ruby Client/#{OpenWeather::VERSION}"
       self.ca_path = nil

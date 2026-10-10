@@ -36,6 +36,10 @@ Unlike other clients, including [open-weather](https://github.com/coderhs/ruby_o
     - [Direct Geocoding](#direct-geocoding)
     - [Reverse Geocoding](#reverse-geocoding)
     - [Zip Code Geocoding](#zip-code-geocoding)
+  - [Statistical Weather Data (Pro)](#statistical-weather-data-pro)
+    - [Yearly Aggregation](#yearly-aggregation)
+    - [Monthly Aggregation](#monthly-aggregation)
+    - [Daily Aggregation](#daily-aggregation)
 - [Configuration](#configuration)
   - [Units](#units)
     - [Converting Temperature](#converting-temperature)
@@ -420,6 +424,42 @@ Or pass a hash of options.
 ```ruby
 client.geo_zip(zip: '94040', country: 'US') # => OpenWeather::Models::GeoLocationZip
 ```
+
+### Statistical Weather Data (Pro)
+
+The [Statistical Weather Data API](https://openweathermap.org/api/statistics-api) returns statistically calculated weather data (not real historical data) for main weather parameters (temperature, pressure, humidity, wind, precipitation, clouds), based on [historical weather data](https://openweathermap.org/history).
+
+#### Yearly Aggregation
+
+To get statistical data for all 365 days of the year, call the client method:
+```ruby
+client.statistics_year(lat: 35, lon: 139) # => OpenWeather::Models::Statistics::Aggregations
+```
+`Aggregations#result` is an `Array[OpenWeather::Models::Statistics::Aggregation]`, and `Aggregations` itself is `Enumerable`.
+
+#### Monthly Aggregation
+
+To get statistical data for a specific month, call the client method:
+```ruby
+client.statistics_month(2, lat: 35, lon: 139) # => OpenWeather::Models::Statistics::Aggregations
+```
+Or pass a hash of options.
+```ruby
+client.statistics_month(month: 2, lat: 35, lon: 139) # => OpenWeather::Models::Statistics::Aggregations
+```
+`Aggregations#result` is a single `OpenWeather::Models::Statistics::Aggregation`.
+
+#### Daily Aggregation
+
+To get statistical data for a specific day, call the client method:
+```ruby
+client.statistics_day(2, 1, lat: 35, lon: 139) # => OpenWeather::Models::Statistics::Aggregations
+```
+Or pass a hash of options.
+```ruby
+client.statistics_day(month: 2, day: 1, lat: 35, lon: 139) # => OpenWeather::Models::Statistics::Aggregations
+```
+`Aggregations#result` is a single `OpenWeather::Models::Statistics::Aggregation`.
 
 ## Configuration
 

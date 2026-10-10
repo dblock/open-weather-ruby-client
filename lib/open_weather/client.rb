@@ -11,6 +11,7 @@ module OpenWeather
     include Endpoints::OneCall
     include Endpoints::Stations
     include Endpoints::Geocoding
+    include Endpoints::Statistics
 
     attr_accessor(*Config::ATTRIBUTES)
 
