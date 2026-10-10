@@ -1,3 +1,7 @@
+### 0.8.1 (Next)
+
+* Your contribution here.
+
 ### 0.8.0 (2026/10/09)
 
 * [#54](https://github.com/dblock/open-weather-ruby-client/pull/54): Add support for the Geocoding API (`geo_direct`, `geo_reverse`, `geo_zip`) - [@dblock](https://github.com/dblock).
