@@ -3,6 +3,7 @@
 * [#57](https://github.com/dblock/open-weather-ruby-client/pull/57): Fixes `min`, `max` and `zip` with `hashie` >= 6.0, adds Appraisals (`hashie-5`, `hashie-6`) - [@dblock](https://github.com/dblock).
 * [#58](https://github.com/dblock/open-weather-ruby-client/pull/58): Speeds up CI by reporting coverage from the Ruby 3.4 test job instead of a separate run, skipping duplicate push builds of PR branches, canceling superseded PR builds and using `JRUBY_OPTS=--dev`, and upgrades to [danger-pr-comment](https://github.com/danger/danger-pr-comment) 0.3.0 - [@dblock](https://github.com/dblock).
 * [#59](https://github.com/dblock/open-weather-ruby-client/pull/59): Adds `rake benchmark`, speeds up responses 10-20% by not copying models' String keys and caching weather icon URIs, which are now frozen - [@dblock](https://github.com/dblock).
+* [#60](https://github.com/dblock/open-weather-ruby-client/pull/60): Releases with [ruby-gem-release](https://github.com/dblock/ruby-gem-release) and RubyGems Trusted Publishing - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.8.0 (2026/10/09)
