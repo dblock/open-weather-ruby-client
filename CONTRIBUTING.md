@@ -34,6 +34,16 @@ BUNDLE_GEMFILE=gemfiles/hashie_5.gemfile bundle exec rspec
 
 Regenerate the gemfiles with `bundle exec appraisal generate` after changing the main `Gemfile`.
 
+### Run Benchmarks
+
+Benchmark the client end to end, from the HTTP response through JSON parsing and model construction, against responses replayed from the VCR cassettes in `spec/fixtures`. No network access or API key is needed.
+
+```
+bundle exec rake benchmark
+```
+
+Run selected scenarios with `bundle exec ruby benchmark/client.rb one_call hourly`. Set `BENCHMARK_SAVE` to a file path to compare results across runs, and `BENCHMARK_TIME` to change the measurement time in seconds.
+
 ## Contribute Code
 
 ### Create a Topic Branch

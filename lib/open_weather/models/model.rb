@@ -19,9 +19,15 @@ module OpenWeather
         end
       end
 
+      # Parsed JSON already has String keys, so only copy a Hash that does not.
+      def self.string_keys(args)
+        return args unless args.respond_to?(:transform_keys) && !args.each_key.all?(String)
+
+        args.transform_keys(&:to_s)
+      end
+
       def initialize(args = nil, options = {})
-        transformed_args = args.respond_to?(:transform_keys) ? args.transform_keys(&:to_s) : args
-        super transformed_args
+        super(self.class.string_keys(args))
         @options = { units: OpenWeather.config.units }.merge(options || {})
       end
 

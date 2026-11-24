@@ -16,4 +16,9 @@ end
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new
 
+desc 'Run benchmarks, see benchmark/client.rb.'
+task :benchmark do
+  ruby 'benchmark/client.rb'
+end
+
 task default: %i[rubocop spec]
