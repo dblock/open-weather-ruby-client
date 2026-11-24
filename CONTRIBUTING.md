@@ -25,6 +25,15 @@ bundle install
 bundle exec rake
 ```
 
+The gem is tested against multiple `hashie` versions using [Appraisal](https://github.com/thoughtbot/appraisal), defined in `Appraisals`. To run the tests against a specific version, use its gemfile.
+
+```
+BUNDLE_GEMFILE=gemfiles/hashie_5.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/hashie_5.gemfile bundle exec rspec
+```
+
+Regenerate the gemfiles with `bundle exec appraisal generate` after changing the main `Gemfile`.
+
 ## Contribute Code
 
 ### Create a Topic Branch
