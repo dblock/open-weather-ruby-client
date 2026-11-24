@@ -28,4 +28,30 @@ RSpec.describe OpenWeather::Models::Model do
       expect(OpenWeather::Models::GeoLocationZip.new('zip' => '94040').zip).to eq '94040'
     end
   end
+
+  describe '#initialize' do
+    it 'accepts String keys without copying them' do
+      attributes = { 'lat' => 1.5, 'lon' => 2.5 }
+      expect(attributes).not_to receive(:transform_keys)
+      coord = OpenWeather::Models::Coord.new(attributes)
+      expect(coord.lat).to eq 1.5
+      expect(coord.lon).to eq 2.5
+    end
+
+    it 'accepts Symbol keys' do
+      coord = OpenWeather::Models::Coord.new(lat: 1.5, lon: 2.5)
+      expect(coord.lat).to eq 1.5
+      expect(coord.lon).to eq 2.5
+    end
+  end
+end
+
+RSpec.describe OpenWeather::Models::Weather do
+  it 'returns a frozen icon URI shared by weather with the same icon' do
+    first = described_class.new('icon' => '10n')
+    second = described_class.new('icon' => '10n')
+    expect(first.icon_uri).to eq URI.parse('http://openweathermap.org/img/wn/10n@2x.png')
+    expect(first.icon_uri).to be_frozen
+    expect(first.icon_uri).to be second.icon_uri
+  end
 end
