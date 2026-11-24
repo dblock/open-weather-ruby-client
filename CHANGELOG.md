@@ -1,3 +1,7 @@
+### 0.8.2 (Next)
+
+* Your contribution here.
+
 ### 0.8.1 (2026/11/24)
 
 * [#57](https://github.com/dblock/open-weather-ruby-client/pull/57): Fixes `min`, `max` and `zip` with `hashie` >= 6.0, adds Appraisals (`hashie-5`, `hashie-6`) - [@dblock](https://github.com/dblock).
