@@ -72,7 +72,7 @@ Make sure that `bundle exec rake` completes without errors.
 
 ### Write Documentation
 
-Document any external behavior in the [README](README.md).
+Document any external behavior in the [README](README.md) or the [usage documentation](docs/USAGE.md).
 
 ### Update Changelog
 
