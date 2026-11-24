@@ -1,5 +1,13 @@
 name: Tests
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+permissions:
+  contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -9,7 +17,7 @@ jobs:
           - { ruby: "3.1" }
           - { ruby: "3.2" }
           - { ruby: "3.3" }
-          - { ruby: "3.4" }
+          - { ruby: "3.4", coverage: true }
           - { ruby: "4.0" }
           - { ruby: "3.4", gemfile: gemfiles/hashie_5.gemfile }
           - { ruby: "3.4", gemfile: gemfiles/hashie_6.gemfile }
@@ -18,6 +26,8 @@ jobs:
     name: Test (ruby=${{ matrix.entry.ruby }}${{ matrix.entry.gemfile && format(', gemfile={0}', matrix.entry.gemfile) || '' }})
     env:
       BUNDLE_GEMFILE: ${{ matrix.entry.gemfile || 'Gemfile' }}
+      # Faster JRuby startup for short-lived test runs, ignored by MRI.
+      JRUBY_OPTS: --dev
     steps:
       - uses: actions/checkout@v7
       - name: Install Ruby
@@ -28,4 +38,9 @@ jobs:
       - name: Run Tests
         continue-on-error: ${{ matrix.entry.ignore || false }}
         run: bundle exec rspec
-
+      - name: Report Coverage to Coveralls
+        if: ${{ matrix.entry.coverage }}
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage/lcov.info
