@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'open_weather/version'
+require_relative 'lib/open_weather/version'
 
 Gem::Specification.new do |s|
   s.name = 'open-weather-ruby-client'

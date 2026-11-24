@@ -2,62 +2,49 @@
 
 There're no hard rules about when to release open-weather-ruby-client. Release bug fixes frequently, features not so frequently and breaking API changes rarely.
 
-### Release
+Releases use [ruby-gem-release](https://github.com/dblock/ruby-gem-release) 0.9.0 through a manually dispatched [Release workflow](.github/workflows/release.yml). Keep the `ruby-gem-release` version in [Gemfile](Gemfile) and the reusable workflow pinned to the same release. The workflow publishes with RubyGems Trusted Publishing, so no RubyGems API key or one-time password is needed. It only runs from `master` in `dblock/open-weather-ruby-client`. The local `rake release`, `rake release:rubygem_push` and `rake release:source_control_push` tasks are disabled.
 
-Run tests, check that all tests succeed locally.
+### One-Time Setup
+
+Before the first automated release, a maintainer must:
+
+1. Create the GitHub environment `release` and restrict its deployment branches to `master`, optionally with required reviewers.
+2. Add a GitHub Actions trusted publisher at [open-weather-ruby-client's trusted publishers](https://rubygems.org/gems/open-weather-ruby-client/trusted_publishers) with repository owner `dblock`, repository `open-weather-ruby-client`, workflow filename `release.yml`, environment `release`, and workflow repository owner `dblock` and name `ruby-gem-release`.
+3. Allow GitHub Actions to push release commits and `v*` tags to `master`.
+
+Verify the setup without releasing.
+
+```
+gh workflow run release.yml --repo dblock/open-weather-ruby-client --ref master -f dry-run=true
+```
+
+See [ruby-gem-release's setup guidance](https://github.com/dblock/ruby-gem-release/blob/v0.9.0/RELEASING.md#one-time-setup) for details.
+
+### Prepare
+
+Start with a clean, up-to-date `master` and check that the last [CI build](https://github.com/dblock/open-weather-ruby-client/actions/workflows/test.yml) succeeded for all supported platforms.
+
+Check that `OpenWeather::VERSION` in [lib/open_weather/version.rb](lib/open_weather/version.rb) matches the `### x.y.z (Next)` heading in [CHANGELOG.md](CHANGELOG.md). Increment the patch version for bug fixes, the minor version for features, and the major version for breaking changes, and describe breaking changes in [UPGRADING.md](UPGRADING.md). Keep `(Next)` and `* Your contribution here.`; the workflow dates the release and removes the placeholder.
+
+Release automation requires MRI Ruby 3.3 or newer.
 
 ```
 bundle install
-rake
+bundle exec rake
 ```
 
-Check that the last build succeeded in GitHub Actions for all supported platforms.
+### Release
 
-If `bundle install` or `rake release` fails with a `DidYouMean::SPELL_CHECKERS` error, your local Bundler version is too old for your Ruby version. Update it, e.g. `gem install bundler -v '~> 2.7'`.
-
-Change "Next" in [CHANGELOG.md](CHANGELOG.md) to the current date.
+Dispatch the checked-in version. This is a real release, not a dry run.
 
 ```
-### 0.2.2 (7/10/2015)
+gh workflow run release.yml --repo dblock/open-weather-ruby-client --ref master
 ```
 
-Remove the line with "Your contribution here.", since there will be no more contributions to this release.
+To release a different version, pass `-f version=x.y.z`.
 
-Commit your changes.
+The workflow dates the CHANGELOG section, runs RuboCop and tests, builds and publishes the gem, pushes the release commit and `v` tag, and creates a [GitHub release](https://github.com/dblock/open-weather-ruby-client/releases) with the release notes and gem. It then increments the patch version, adds a new `(Next)` section to CHANGELOG.md, and pushes to `master`. Don't merge into `master` while it runs.
 
-```
-git add CHANGELOG.md
-git commit -m "Preparing for release, 0.2.2."
-git push origin master
-```
+Afterwards, verify the gem on [RubyGems](https://rubygems.org/gems/open-weather-ruby-client), the tag, the GitHub release, and the next development commit on `master`.
 
-Release.
-
-```
-$ rake release
-
-open-weather-ruby-client 0.2.2 built to pkg/open-weather-ruby-client-0.2.2.gem.
-Tagged v0.2.2.
-Pushed git commits and tags.
-Pushed open-weather-ruby-client 0.2.2 to rubygems.org.
-```
-
-### Prepare for the Next Version
-
-Add the next release to [CHANGELOG.md](CHANGELOG.md).
-
-```
-### 0.2.3 (Next)
-
-* Your contribution here.
-```
-
-Increment the third version number in [lib/open_weather/version.rb](lib/open_weather/version.rb).
-
-Commit your changes.
-
-```
-git add CHANGELOG.md lib/open_weather/version.rb
-git commit -m "Preparing for next development iteration, 0.2.3."
-git push origin master
-```
+If a release fails partway, inspect what was published before retrying, never move tags, and see [recovery artifacts](https://github.com/dblock/ruby-gem-release/blob/v0.9.0/docs/actions/release.md#recovery-artifacts).
